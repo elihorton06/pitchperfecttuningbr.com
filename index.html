@@ -16,7 +16,7 @@
 
     header {
       background-color: #dedace;
-      height: 220px; /* controlled height */
+      height: 220px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -24,11 +24,33 @@
     }
 
     header img {
-      max-height: 160px; /* fixed max height */
-      max-width: 80%; /* don’t stretch full width */
+      max-height: 160px;
+      max-width: 80%;
       width: auto;
       height: auto;
       object-fit: contain;
+    }
+
+    nav {
+      background-color: #dedace;
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #666;
     }
 
     .tagline {
@@ -46,12 +68,14 @@
       font-size: 1.1rem;
     }
 
-    img {
-      max-width: 90%;
+    .feature-image {
+      max-width: 80%;
+      max-height: 500px;
       height: auto;
       border-radius: 10px;
-      margin-top: 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      margin: 50px auto;
+      display: block;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
     }
 
     a {
@@ -65,64 +89,29 @@
       font-size: 0.9em;
       color: #999;
     }
-
-    .feature-image {
-  max-width: 80%;        /* a little narrower than before */
-  max-height: 500px;     /* caps the height */
-  height: auto;
-  border-radius: 10px;
-  margin: 50px auto;
-  display: block;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-}
-
-nav {
-  background-color: #dedace;
-  padding: 15px 0;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin: 0; /* ensure it touches the header */
-}
-
-nav a {
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #666;
-}
-
-.tagline {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin: 40px 20px 20px;
-}
   </style>
 </head>
 <body>
 
-</header>
+  <header>
+    <a href="/">
+      <img src="logo.jpg" alt="Pitch Perfect Logo">
+    </a>
+  </header>
 
-<nav>
-  <a href="#">Home</a>
-  <a href="#">Schedule</a>
-  <a href="#">F.A.Q</a>
-  <a href="#">Contact</a>
-  <a href="#">About</a>
-</nav>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Schedule</a>
+    <a href="#">F.A.Q</a>
+    <a href="#">Contact</a>
+    <a href="#">About</a>
+  </nav>
 
-<div class="tagline">
-  Serving Baton Rouge and the surrounding areas with expert piano tuning and repair services.
-</div>
+  <div class="tagline">
+    Serving Baton Rouge and the surrounding areas with expert piano tuning and repair services.
+  </div>
   
-    <main>
+  <main>
     <p>Whether you're a beginner, a performer, or a church musician, or you just need a good tuning, we’ll make sure your piano sounds its best.</p>
     <p>📞 Call or text: <a href="tel:2259781470">(225) 978-1470</a></p>
     <p>📧 Email: <a href="mailto:pitchperfecttuner@gmail.com">pitchperfecttuner@gmail.com</a></p>
