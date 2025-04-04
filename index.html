@@ -83,6 +83,7 @@ nav {
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
+  margin: 0; /* ensure it touches the header */
 }
 
 nav a {
@@ -94,21 +95,20 @@ nav a {
 }
 
 nav a:hover {
-  color: #666; /* darker gray on hover */
+  color: #666;
+}
+
+.tagline {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 40px 20px 20px;
 }
   </style>
 </head>
 <body>
 
-  <header>
-    <a href="/">
-      <img src="logo.jpg" alt="Pitch Perfect Logo" />
-    </a>
-  </header>
-
-  <div class="tagline">
-  Serving Baton Rouge and the surrounding areas with expert piano tuning and repair services.
-</div>
+</header>
 
 <nav>
   <a href="#">Home</a>
@@ -117,6 +117,10 @@ nav a:hover {
   <a href="#">Contact</a>
   <a href="#">About</a>
 </nav>
+
+<div class="tagline">
+  Serving Baton Rouge and the surrounding areas with expert piano tuning and repair services.
+</div>
   
     <main>
     <p>Whether you're a beginner, a performer, or a church musician, or you just need a good tuning, we’ll make sure your piano sounds its best.</p>
