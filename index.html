@@ -16,16 +16,32 @@
 
     header {
       background-color: #dedace; /* tan header */
-      padding: 50px 20px;
-      color: #222; /* dark text for light header */
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
     }
 
     header img {
-      max-height: 100px;
+      max-height: 90%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .tagline {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffffff;
+      margin: 40px 20px 20px;
     }
 
     main {
       padding: 30px 20px;
+    }
+
+    main p {
+      font-size: 1.1rem;
     }
 
     img {
@@ -55,8 +71,11 @@
     <a href="/">
       <img src="logo.jpg" alt="Pitch Perfect Logo" />
     </a>
-    <p>Serving Baton Rouge and the surrounding areas with expert piano tuning and repair services.</p>
   </header>
+
+  <div class="tagline">
+    Serving Baton Rouge and the surrounding areas with expert piano tuning and repair services.
+  </div>
 
   <main>
     <p>Whether you're a beginner, a performer, or a church musician, or you just need a good tuning, we’ll make sure your piano sounds its best.</p>
