@@ -2,59 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pitch Perfect Piano Tuning & Repair</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #1e1e1e;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e1e;
       color: #f0f0f0;
     }
 
-   header {
-  background-color: #e7e1cf;
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    header {
+      background-color: #dedace;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-.header-container {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  flex-wrap: wrap;
-}
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
 
-.logo {
-  max-height: 160px;
-  max-width: 100%;
-  object-fit: contain;
-}
+    .logo {
+      max-height: 160px;
+      object-fit: contain;
+    }
 
-.logo.left {
-  max-height: 180px;
-  margin-right: 40px;
-}
-
-.right-logos-horizontal {
-  display: flex;
-  flex-direction: row;  /* Makes them side by side */
-  gap: 30px;            /* Space between the two logos */
-  justify-content: center;
-  align-items: center;
-}
     nav {
-      background-color: #e7e1cf;
-      padding: 15px 0;
+      background-color: #dedace;
       display: flex;
       justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin: 0;
+      gap: 30px;
+      padding: 15px 0;
     }
 
     nav a {
@@ -70,74 +53,66 @@
     }
 
     .tagline {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: bold;
-      color: #ffffff;
-      margin: 40px 20px 20px;
+      color: white;
+      text-align: center;
+      margin: 60px 20px 30px;
     }
 
     main {
-      padding: 30px 20px;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     main p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
     }
 
     .feature-image {
-      max-width: 80%;
-      max-height: 500px;
+      max-width: 100%;
       height: auto;
       border-radius: 10px;
-      margin: 50px auto;
-      display: block;
+      margin-top: 50px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    a {
-      color: #00aaff;
-      text-decoration: none;
-      font-weight: bold;
+      display: block;
     }
 
     footer {
-      margin-top: 40px;
-      font-size: 0.9em;
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      font-size: 0.9rem;
       color: #999;
     }
-
-    .logo.left {
-  max-height: 180px;
-  margin-right: 40px;
-}
   </style>
 </head>
 <body>
 
-<!-- NEW HEADER WITH 3 LOGOS -->
-<header>
-  <div class="header-container">
-    <img src="logo1.jpg" alt="Logo 1" class="logo left">
-    <div class="right-logos-horizontal">
-      <img src="logo3.jpg" alt="Logo 3" class="logo right">
-      <img src="logo4.jpg" alt="Logo 4" class="logo right">
+  <header>
+    <div class="logo-group">
+      <img src="logo1.jpg" alt="Logo 1" class="logo">
     </div>
-  </div>
-</header>
+    <div class="logo-group">
+      <img src="logo3.jpg" alt="Logo 3" class="logo">
+      <img src="logo4.jpg" alt="Logo 4" class="logo">
+    </div>
+  </header>
 
-<!-- NAVIGATION BAR STARTS HERE -->
-<nav>
-  <a href="#">Home</a>
-  <a href="#">Schedule</a>
-  <a href="#">F.A.Q</a>
-  <a href="#">Contact</a>
-  <a href="#">About</a>
-</nav>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Schedule</a>
+    <a href="#">F.A.Q</a>
+    <a href="#">Contact</a>
+    <a href="#">About</a>
+  </nav>
 
   <div class="tagline">
-    Serving the state of Louisiana with expert piano tuning and repair services.
+    Serving Baton Rouge and the surrounding areas with expert piano tuning and repair services.
   </div>
-  
+
   <main>
     <p>Whether you're a beginner, a performer, or a church musician, or you just need a good tuning, we’ll make sure your piano sounds its best.</p>
     <p>📞 Call or text: <a href="tel:2259781470">(225) 978-1470</a></p>
@@ -146,7 +121,7 @@
     <img src="steinway.jpg" alt="Steinway Piano" class="feature-image">
 
     <footer>
-      <p>&copy; 2025 Pitch Perfect Piano Tuning & Repair. All rights reserved.</p>
+      &copy; 2025 Pitch Perfect Piano Tuning & Repair. All rights reserved.
     </footer>
   </main>
 
