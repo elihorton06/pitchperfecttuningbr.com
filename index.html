@@ -30,20 +30,25 @@
 }
 
 .logo {
-  max-height: 140px;
+  max-height: 160px;
   max-width: 100%;
   object-fit: contain;
 }
 
-.right-logos {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: space-between;
+.logo.left {
+  max-height: 180px;
+  margin-right: 40px;
 }
 
+.right-logos-horizontal {
+  display: flex;
+  flex-direction: row;  /* Makes them side by side */
+  gap: 30px;            /* Space between the two logos */
+  justify-content: center;
+  align-items: center;
+}
     nav {
-      background-color: #dedace;
+      background-color: #e7e1cf;
       padding: 15px 0;
       display: flex;
       justify-content: center;
@@ -113,9 +118,9 @@
 <header>
   <div class="header-container">
     <img src="logo1.jpg" alt="Logo 1" class="logo left">
-    <div class="right-logos">
-      <img src="logo4.jpg" alt="Logo 4" class="logo right-top">
-      <img src="logo3.jpg" alt="Logo 3" class="logo right-bottom">
+    <div class="right-logos-horizontal">
+      <img src="logo3.jpg" alt="Logo 3" class="logo right">
+      <img src="logo4.jpg" alt="Logo 4" class="logo right">
     </div>
   </div>
 </header>
