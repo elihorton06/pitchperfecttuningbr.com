@@ -76,6 +76,49 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
     }
 
+    .divider {
+      width: 80%;
+      height: 1px;
+      background-color: #777;
+      margin: 40px auto;
+    }
+
+    .services-section {
+      padding: 40px 20px;
+    }
+
+    .services-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .service-item {
+      flex: 1 1 30%;
+      max-width: 30%;
+    }
+
+    .service-item img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .service-item p {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
     a {
       color: #00aaff;
       text-decoration: none;
@@ -83,7 +126,7 @@
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 60px;
       font-size: 0.9em;
       color: #999;
     }
@@ -97,19 +140,52 @@
 
   <nav>
     <a href="#">Home</a>
-    <a href="#">Maintenance</a>
+    <a href="#">Schedule</a>
     <a href="#">F.A.Q.</a>
     <a href="#">Contact</a>
-    <a href="#">About Eli</a>
+    <a href="#">About</a>
   </nav>
 
   <div class="tagline">Serving the state of Louisiana with expert piano tuning and repair services.</div>
-<main>
+
+  <main>
     <p>Whether you're a beginner, a performer, or a church musician, or you just need a good tuning, we’ll make sure your piano sounds its best.</p>
     <p>📞 Call or text: <a href="tel:2259781470">(225) 978-1470</a></p>
     <p>📧 Email: <a href="mailto:pitchperfecttuner@gmail.com">pitchperfecttuner@gmail.com</a></p>
 
     <img src="steinway.jpg" alt="Steinway Piano" class="feature-image">
+
+    <div class="divider"></div>
+
+    <section class="services-section">
+      <div class="services-title">Services Offered</div>
+      <div class="services-grid">
+        <div class="service-item">
+          <img src="tuning.jpg" alt="Tuning">
+          <p>Tuning</p>
+        </div>
+        <div class="service-item">
+          <img src="fixing.jpg" alt="Fixing">
+          <p>Fixing</p>
+        </div>
+        <div class="service-item">
+          <img src="cleaning.jpg" alt="Cleaning">
+          <p>Cleaning</p>
+        </div>
+        <div class="service-item">
+          <img src="voicing.jpg" alt="Voicing">
+          <p>Voicing</p>
+        </div>
+        <div class="service-item">
+          <img src="regulation.jpg" alt="Regulation">
+          <p>Regulation</p>
+        </div>
+        <div class="service-item">
+          <img src="other.jpg" alt="And More!">
+          <p>And More!</p>
+        </div>
+      </div>
+    </section>
 
     <footer>
       <p>&copy; 2025 Pitch Perfect Piano Tuning & Repair. All rights reserved.</p>
