@@ -144,6 +144,31 @@
     .checkbox-group input[type="checkbox"] {
       accent-color: #00aaff;
     }
+      .schedule-form textarea {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: none;
+      background-color: #2a2a2a;
+      color: #f0f0f0;
+      resize: vertical;
+    }
+
+    .submit-button {
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background-color: #e8e2cc;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background-color: #d9d3bd;
+    }
   </style>
 </head>
 <body>
@@ -188,6 +213,11 @@
   <label><input type="checkbox" name="reason" value="concern"> Concern</label><br>
   <label><input type="checkbox" name="reason" value="other"> Other (specify below)</label>
 </div>
+
+    <label for="description">Description <span style="font-size: 0.9rem; color: #aaa;">(optional)</span></label>
+    <textarea id="description" name="description" rows="5"></textarea>
+
+    <button type="submit" class="submit-button">Submit</button>
   </form>
 
   <section class="contact-info">
