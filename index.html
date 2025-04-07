@@ -183,6 +183,22 @@
       padding: 20px 10px;
       font-size: 0.95rem;
     }
+  @media (max-width: 768px) {
+      .services-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .service-item {
+        max-width: 90%;
+      }
+
+      .service-item img {
+        height: auto;
+        max-height: 240px;
+        object-fit: contain;
+      }
+    }
   </style>
 </head>
 <body>
