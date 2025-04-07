@@ -94,6 +94,42 @@
       padding: 20px 10px;
       font-size: 0.95rem;
     }
+      .schedule-form {
+      max-width: 600px;
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .schedule-form label {
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .schedule-form input,
+    .schedule-form select {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: none;
+      background-color: #2a2a2a;
+      color: #f0f0f0;
+    }
+
+    .schedule-form select[multiple] {
+      height: 150px;
+    }
+
+    .schedule-form option:checked {
+      background-color: #1e1e1e;
+    }
+
+    .schedule-form option {
+      padding: 6px;
+    }
   </style>
 </head>
 <body>
@@ -111,7 +147,34 @@
   </nav>
 
   <div class="page-title">Schedule a Tuning or Repair</div>
-  <div class="coming-soon">Scheduling page coming soon. In the meantime, please reach out directly!</div>
+  <form class="schedule-form">
+    <label for="name">Name (required)</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="phone">Phone Number (required)</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="email">Email (optional)</label>
+    <input type="email" id="email" name="email">
+
+    <label for="communication">Preferred Communication Method</label>
+    <select id="communication" name="communication">
+      <option value="text">Text</option>
+      <option value="phone">Phone Call</option>
+      <option value="email">Email</option>
+    </select>
+
+    <label for="reason">Contact Reason <span style="font-size: 0.9rem; color: #aaa;">(Select all that apply)</span></label>
+    <select id="reason" name="reason" multiple>
+      <option value="tuning">Tuning</option>
+      <option value="repair">Repair</option>
+      <option value="cleaning">Cleaning</option>
+      <option value="voicing">Voicing</option>
+      <option value="regulation">Regulation</option>
+      <option value="concern">Concern</option>
+      <option value="other">Other (specify below)</option>
+    </select>
+  </form>
 
   <section class="contact-info">
     <p class="contact-message">
