@@ -146,7 +146,7 @@
     <a href="#">About</a>
   </nav>
 
-  <div class="page-title">Schedule a Tuning or Repair</div>
+  <div class="page-title">Schedule a Servicing Appointment</div>
   <form class="schedule-form">
     <label for="name">Name (required)</label>
     <input type="text" id="name" name="name" required>
@@ -165,7 +165,7 @@
     </select>
 
     <label for="reason">Contact Reason <span style="font-size: 0.9rem; color: #aaa;">(Select all that apply)</span></label>
-    <select id="reason" name="reason" multiple>
+    <select id="reason" name="reason[]" multiple size="7">
       <option value="tuning">Tuning</option>
       <option value="repair">Repair</option>
       <option value="cleaning">Cleaning</option>
