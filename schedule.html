@@ -130,6 +130,20 @@
     .schedule-form option {
       padding: 6px;
     }
+      .checkbox-group {
+      text-align: left;
+      font-size: 1rem;
+      color: #f0f0f0;
+    }
+
+    .checkbox-group label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      accent-color: #00aaff;
+    }
   </style>
 </head>
 <body>
@@ -164,16 +178,16 @@
       <option value="email">Email</option>
     </select>
 
-    <label for="reason">Contact Reason <span style="font-size: 0.9rem; color: #aaa;">(Select all that apply)</span></label>
-    <select id="reason" name="reason[]" multiple size="7">
-      <option value="tuning">Tuning</option>
-      <option value="repair">Repair</option>
-      <option value="cleaning">Cleaning</option>
-      <option value="voicing">Voicing</option>
-      <option value="regulation">Regulation</option>
-      <option value="concern">Concern</option>
-      <option value="other">Other (specify below)</option>
-    </select>
+    <label>Contact Reason <span style="font-size: 0.9rem; color: #aaa;">(Select all that apply)</span></label>
+<div class="checkbox-group">
+  <label><input type="checkbox" name="reason" value="tuning"> Tuning</label><br>
+  <label><input type="checkbox" name="reason" value="repair"> Repair</label><br>
+  <label><input type="checkbox" name="reason" value="cleaning"> Cleaning</label><br>
+  <label><input type="checkbox" name="reason" value="voicing"> Voicing</label><br>
+  <label><input type="checkbox" name="reason" value="regulation"> Regulation</label><br>
+  <label><input type="checkbox" name="reason" value="concern"> Concern</label><br>
+  <label><input type="checkbox" name="reason" value="other"> Other (specify below)</label>
+</div>
   </form>
 
   <section class="contact-info">
