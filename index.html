@@ -76,6 +76,24 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
     }
 
+    .schedule-button {
+      display: inline-block;
+      margin: 30px auto 50px;
+      padding: 14px 28px;
+      font-size: 1.2rem;
+      background-color: #e8e2cc;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .schedule-button:hover {
+      background-color: #d9d3bd;
+    }
+
     .divider {
       width: 80%;
       height: 1px;
@@ -124,41 +142,46 @@
     .service-item p {
       margin-top: 10px;
       font-weight: bold;
+      font-size: 1.2rem;
     }
 
     .service-description {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 700;
       margin-top: 8px;
       color: #ccc;
     }
 
-    a {
-      color: #00aaff;
+    .contact-info {
+      background-color: #2a2a2a;
+      padding: 40px 20px;
+      margin-top: 60px;
+    }
+
+    .contact-message {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #f0f0f0;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .contact-message a {
+      color: #e8e2cc;
       text-decoration: none;
       font-weight: bold;
     }
 
-    footer {
-      margin-top: 60px;
-      font-size: 0.9em;
-      color: #999;
-    }
-      .schedule-button {
-      background-color: #e8e2cc;
-      color: black;
-      font-size: 1.2rem;
-      font-weight: bold;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 20px;
-      transition: background-color 0.3s ease;
+    .contact-message a:hover {
+      text-decoration: underline;
     }
 
-    .schedule-button:hover {
-      background-color: #d8d2bc;
+    .custom-footer {
+      background-color: #2a2a2a;
+      color: #bbb;
+      padding: 20px 10px;
+      font-size: 0.95rem;
     }
   </style>
 </head>
@@ -185,7 +208,7 @@
 
     <img src="steinway.jpg" alt="Steinway Piano" class="feature-image">
 
-    <button class="schedule-button">Schedule Today!</button>
+    <a href="tel:2259781470" class="schedule-button">Schedule Today!</a>
 
     <div class="divider"></div>
 
@@ -225,8 +248,15 @@
       </div>
     </section>
 
-    <footer>
-      <p>&copy; 2025 Pitch Perfect Piano Tuning & Repair. All rights reserved.</p>
+    <section class="contact-info">
+      <p class="contact-message">
+        If you have any questions, concerns, or would like to go ahead and schedule with just a few taps,<br>
+        contact Eli at <a href="tel:2259781470">(225) 978-1470</a> or <a href="mailto:pitchperfecttuner@gmail.com">pitchperfecttuner@gmail.com</a>.
+      </p>
+    </section>
+
+    <footer class="custom-footer">
+      <p>&copy; 2025 Pitch Perfect Piano Tuning & Repair — Coded and created by Eli Horton.</p>
     </footer>
   </main>
 
