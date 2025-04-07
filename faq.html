@@ -80,7 +80,28 @@
       font-size: 0.95rem;
       margin-top: 60px;
     }
-  </style>
+      details.faq-item {
+      background-color: #2a2a2a;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    summary.faq-question {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .faq-answer {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #cccccc;
+      margin-top: 10px;
+    }
+</style>
 </head>
 <body>
 
@@ -98,41 +119,37 @@
 
 <section class="faq-section">
   <h2 style="text-align: center; font-size: 2.4rem; margin-bottom: 50px;">Frequently Asked Questions (F.A.Q.)</h2>
-  <div class="faq-item">
-    <div class="faq-question">Do you accept electronic payments?</div>
-    <div class="faq-answer">Yes! I accept cash, checks, Venmo, PayPal, and Zelle — whatever works best for you.</div>
-  </div>
+  <details class="faq-item">
+  <summary class="faq-question">Do you accept electronic payments?</summary>
+  <div class="faq-answer">Yes! I accept Venmo, Zelle, PayPal, and then cash or checks — whatever works best for you.</div>
+</details>
 
-  <div class="faq-item">
-    <div class="faq-question">What is a regulation?</div>
-    <div class="faq-answer">Regulation is all about making sure every mechanical part of your piano’s action — the internal mechanism that transfers motion from your fingers to the strings — is responsive and precise. It allows you to control dynamics and touch with consistency and ease.</div>
-  </div>
+  <details class="faq-item">
+  <summary class="faq-question">What is a regulation?</summary>
+  <div class="faq-answer">Regulation is all about making sure every mechanical part of your piano’s action — the internal mechanism that transfers motion from your fingers to the strings — is responsive and precise. It allows you to control dynamics and touch with consistency and ease.</div>
+</details>
 
-  <div class="faq-item">
-    <div class="faq-question">How often should a piano be tuned?</div>
-    <div class="faq-answer">Most piano manufacturers recommend tuning every 6 to 12 months to maintain pitch stability and ensure long-term health of the instrument — especially in changing Louisiana weather.</div>
-  </div>
+  <details class="faq-item">
+  <summary class="faq-question">How often should a piano be tuned?</summary>
+  <div class="faq-answer">Most piano technicians, manufacturers, and experts recommend tuning every 6 to 12 months to maintain pitch stability and ensure long-term health of the instrument — especially in changing Louisiana weather.</div>
+</details>
 
-  <div class="faq-item">
-    <div class="faq-question">Why is cleaning my piano important?</div>
-    <div class="faq-answer">Dust, moisture, and pests can wreak havoc on your piano. Regular cleanings can protect internal parts, prevent sticky keys, rust, and even long-term damage — and help maintain its value and appearance.</div>
-  </div>
+  <details class="faq-item">
+  <summary class="faq-question">Why is cleaning my piano important?</summary>
+  <div class="faq-answer">Dust, moisture, and pests can wreak havoc on your piano. Regular cleanings can protect internal parts, prevent sticky keys, rust, and even long-term damage — and help maintain its value and appearance.</div>
+</details>
 
-  <div class="faq-item">
-    <div class="faq-question">Do you charge a mileage fee?</div>
-    <div class="faq-answer">Yes, but it’s reasonable and based on distance. If you’re about 30 minutes outside of Baton Rouge, you’ll likely pay around $20–25. Mileage never exceeds $40 — the cost of a full tank.</div>
-  </div>
+  <details class="faq-item">
+  <summary class="faq-question">Do you charge a mileage fee?</summary>
+  <div class="faq-answer">Yes, but it’s reasonable and based on distance. If you’re about 30 minutes from the center area of Baton Rouge, you’ll likely pay around $20–25. Mileage never exceeds $40 — the cost of a full tank.</div>
+</details>
 
-  <div class="faq-item">
-    <div class="faq-question">How long does a piano tuning take?</div>
-    <div class="faq-answer">On average, expect around 2 hours — including setup, basic cleaning, and fine-tuning. If minor repairs are needed, I’ll take care of those too.</div>
-  </div>
+  <details class="faq-item">
+  <summary class="faq-question">How long does a piano tuning take?</summary>
+  <div class="faq-answer">On average, expect around 2 hours — including setup, basic cleaning, and fine-tuning. If minor repairs are needed, I’ll take care of those as well in a timely manner.</div>
+</details>
 
-  <div class="faq-item">
-    <div class="faq-question">Do you do full rebuilds or restorations?</div>
-    <div class="faq-answer">Not at the moment — but stay tuned! Restoration services are on my radar for the future.</div>
-  </div>
-  <div style="text-align: center; margin-top: 60px; font-size: 1.2rem;">
+    <div style="text-align: center; margin-top: 60px; font-size: 1.2rem;">
     <p>Still have questions? <a href="contact.html" style="color: #66ccff; text-decoration: underline;">Reach out to me here</a> and I’ll be happy to help!</p>
   </div>
 </section>
