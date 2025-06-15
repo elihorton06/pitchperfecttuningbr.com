@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Pitch Perfect Piano Tuning & Repair</title>
+  <title>Contact - Pitch Perfect Piano Tuning & Repair</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -50,98 +50,90 @@
       color: #666;
     }
 
-    .reminder {
-      margin: 50px auto 30px;
-      max-width: 600px;
-      font-size: 1.1rem;
-      background-color: #2a2a2a;
+    .contact-container {
+      max-width: 700px;
+      margin: 50px auto;
       padding: 20px;
+      background-color: #2a2a2a;
       border-radius: 10px;
     }
 
-    .reminder a {
+    .contact-container h1 {
       color: #e8e2cc;
-      text-decoration: underline;
+      margin-bottom: 20px;
     }
 
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto 60px;
+    .contact-container p {
+      margin-bottom: 30px;
+    }
+
+    form {
       display: flex;
       flex-direction: column;
       gap: 20px;
-      padding: 0 20px;
     }
 
-    .contact-form input,
-    .contact-form textarea {
+    input, textarea {
       padding: 12px;
       font-size: 1rem;
-      border-radius: 6px;
       border: none;
-      background-color: #2a2a2a;
-      color: #f0f0f0;
+      border-radius: 5px;
+      width: 100%;
     }
 
-    .contact-form textarea {
-      resize: vertical;
-    }
-
-    .submit-button {
-      padding: 12px 24px;
-      font-size: 1.1rem;
-      font-weight: bold;
+    button {
       background-color: #e8e2cc;
       color: #000;
+      font-weight: bold;
+      padding: 14px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
-    .submit-button:hover {
-      background-color: #d9d3bd;
+    button:hover {
+      background-color: #d8d2bc;
     }
 
-    footer {
-      background-color: #2a2a2a;
-      color: #bbb;
-      padding: 20px 10px;
+    .redirect-box {
+      margin-top: 30px;
       font-size: 0.95rem;
+    }
+
+    .redirect-box a {
+      color: #66ccff;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+  <header>
+    <a href="index.html">
+      <img src="logo6.jpg" alt="Pitch Perfect Logo" class="logo">
+    </a>
+  </header>
 
-<header>
-  <a href="index.html">
-    <img src="logo6.jpg" alt="Pitch Perfect Logo" class="logo">
-  </a>
-</header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="faq.html">F.A.Q.</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+  </nav>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="schedule.html">Schedule</a>
-  <a href="faq.html">F.A.Q.</a>
-  <a href="contact.html">Contact</a>
-  <a href="about.html">About</a>
-</nav>
+  <div class="contact-container">
+    <h1>Other Inquiries</h1>
+    <p><strong>Note:</strong> This form is for general inquiries. For scheduling, please <a href="schedule.html">click here to schedule an appointment.</a></p>
 
-<div class="reminder">
-  <p>This form is for <strong>other inquiries</strong> only. If you're looking to schedule an appointment, please <a href="schedule.html">click here</a>.</p>
-</div>
-
-<form class="contact-form" action="https://usebasin.com/f/bac2b9b186ca" method="POST">
-  <input type="text" name="name" placeholder="Name (required)" required>
-  <input type="tel" name="phone" placeholder="Phone Number (required)" required>
-  <input type="email" name="email" placeholder="Email (optional)">
-  <textarea name="description" placeholder="Your Message (required)" rows="5" required></textarea>
-    <button type="submit" class="submit-button">Submit Inquiry</button>
-</form>
-
-<footer>
-  <p>&copy; 2025 Pitch Perfect Piano Tuning & Repair — Coded and created by Eli Horton.</p>
-</footer>
-
+    <form action="https://usebasin.com/f/85f6d20b0731" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone Number (optional)">
+      <textarea name="message" rows="6" placeholder="Type your message here..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 </body>
 </html>
+
