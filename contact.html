@@ -73,12 +73,23 @@
       gap: 20px;
     }
 
+    label {
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
     input, textarea {
       padding: 12px;
       font-size: 1rem;
       border: none;
       border-radius: 5px;
       width: 100%;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 150px;
     }
 
     button {
@@ -94,16 +105,6 @@
 
     button:hover {
       background-color: #d8d2bc;
-    }
-
-    .redirect-box {
-      margin-top: 30px;
-      font-size: 0.95rem;
-    }
-
-    .redirect-box a {
-      color: #66ccff;
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -124,16 +125,25 @@
 
   <div class="contact-container">
     <h1>Other Inquiries</h1>
-    <p><strong>Note:</strong> This form is for general inquiries. For scheduling, please <a href="schedule.html">click here to schedule an appointment.</a></p>
+    <p><strong>Note:</strong> This form is for general inquiries only. For scheduling, please <a href="schedule.html">click here to schedule an appointment.</a></p>
 
-    <form class="schedule-form" action="https://usebasin.com/f/85f6d20b0731" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="tel" name="phone" placeholder="Your Phone Number (optional)">
-      <textarea name="message" rows="6" placeholder="Type your message here..." required></textarea>
+    <form action="https://usebasin.com/f/85f6d20b0731" method="POST">
+      <input type="hidden" name="form_source" value="Contact Page">
+
+      <label for="name">Name (required)</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email (required)</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
       <button type="submit">Send Message</button>
     </form>
   </div>
 </body>
 </html>
-
