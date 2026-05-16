@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Pitch Perfect Piano Tuning & Repair</title>
+  <meta name="description" content="Frequently asked questions about piano tuning, repair, cleaning, voicing, regulation, payments, mileage, and scheduling with Pitch Perfect Piano Tuning & Repair." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #11110f;
+      --bg-soft: #1b1a17;
+      --cream: #eee7d1;
+      --cream-dark: #d7caa9;
+      --gold: #caa75d;
+      --gold-soft: rgba(202, 167, 93, 0.18);
+      --text: #f8f4ea;
+      --muted: #c8c0ad;
+      --line: rgba(238, 231, 209, 0.16);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(202, 167, 93, 0.16), transparent 34rem),
+        radial-gradient(circle at bottom right, rgba(232, 226, 204, 0.08), transparent 28rem),
+        var(--bg);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(17, 17, 15, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-wrap {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      min-width: 220px;
+    }
+
+    .brand img {
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
+    }
+
+    .brand-name {
+      display: grid;
+      line-height: 1;
+    }
+
+    .brand-name strong {
+      font-family: "Playfair Display", serif;
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-name span {
+      margin-top: 5px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--cream);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid rgba(202, 167, 93, 0.5);
+      background: linear-gradient(135deg, var(--cream), var(--cream-dark));
+      color: #15130f;
+      text-decoration: none;
+      font-weight: 800;
+      padding: 12px 18px;
+      border-radius: 999px;
+      box-shadow: 0 12px 35px rgba(202, 167, 93, 0.16);
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover,
+    .button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 45px rgba(202, 167, 93, 0.25);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(17, 17, 15, 0.96) 0%, rgba(17, 17, 15, 0.82) 48%, rgba(17, 17, 15, 0.62) 100%),
+        url("steinway.jpg") center/cover no-repeat;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 180px;
+      background: linear-gradient(transparent, var(--bg));
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 96px 0 88px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      border: 1px solid rgba(238, 231, 209, 0.18);
+      background: rgba(238, 231, 209, 0.08);
+      color: var(--cream);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 7px rgba(202, 167, 93, 0.15);
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 6.2vw, 5.8rem);
+      letter-spacing: -0.065em;
+      line-height: 0.95;
+      margin: 24px 0 22px;
+    }
+
+    .gold-text {
+      color: var(--gold);
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      line-height: 1.75;
+      margin: 0 0 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button-primary,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 850;
+      border-radius: 999px;
+      padding: 15px 22px;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, var(--cream), var(--cream-dark));
+      color: #15130f;
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(238, 231, 209, 0.2);
+      color: var(--cream);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .button-secondary:hover {
+      border-color: rgba(202, 167, 93, 0.55);
+      background: rgba(202, 167, 93, 0.12);
+    }
+
+    .hero-panel {
+      border: 1px solid rgba(238, 231, 209, 0.18);
+      background: linear-gradient(180deg, rgba(238, 231, 209, 0.12), rgba(238, 231, 209, 0.055));
+      border-radius: 32px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-panel h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      letter-spacing: -0.05em;
+      line-height: 1;
+      margin: 0 0 16px;
+    }
+
+    .hero-panel p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .mini-list span {
+      border: 1px solid rgba(238, 231, 209, 0.12);
+      background: rgba(0, 0, 0, 0.16);
+      border-radius: 16px;
+      padding: 14px 16px;
+      color: var(--cream);
+      font-weight: 750;
+    }
+
+    .faq-section {
+      width: min(1000px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 90px 0 70px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      margin: 0;
+    }
+
+    .section-heading p {
+      max-width: 760px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1.05rem;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    details.faq-item {
+      border: 1px solid rgba(238, 231, 209, 0.13);
+      background: linear-gradient(180deg, rgba(238, 231, 209, 0.075), rgba(238, 231, 209, 0.035));
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.22);
+      transition: 0.2s ease;
+    }
+
+    details.faq-item:hover {
+      border-color: rgba(202, 167, 93, 0.36);
+      transform: translateY(-2px);
+    }
+
+    details.faq-item[open] {
+      border-color: rgba(202, 167, 93, 0.45);
+      background: linear-gradient(180deg, rgba(202, 167, 93, 0.12), rgba(238, 231, 209, 0.04));
+    }
+
+    summary.faq-question {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 24px 26px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    summary.faq-question::-webkit-details-marker {
+      display: none;
+    }
+
+    summary.faq-question::after {
+      content: "+";
+      flex: 0 0 auto;
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid rgba(202, 167, 93, 0.42);
+      color: var(--gold);
+      font-family: "Inter", sans-serif;
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: 0.2s ease;
+    }
+
+    details[open] summary.faq-question::after {
+      content: "−";
+      background: var(--gold-soft);
+    }
+
+    .faq-answer {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1.05rem;
+      padding: 0 26px 26px;
+      margin-top: -8px;
+    }
+
+    .cta-section {
+      width: min(1180px, calc(100% - 40px));
+      margin: 20px auto 90px;
+      border: 1px solid rgba(202, 167, 93, 0.28);
+      border-radius: 32px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(238, 231, 209, 0.12), rgba(202, 167, 93, 0.08)),
+        var(--bg-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-inner {
+      padding: 46px;
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .cta-inner h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      letter-spacing: -0.055em;
+      line-height: 1;
+      margin: 0 0 14px;
+    }
+
+    .cta-inner p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+      max-width: 720px;
+    }
+
+    .cta-actions {
+      display: grid;
+      gap: 12px;
+      justify-items: stretch;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: rgba(0, 0, 0, 0.22);
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-weight: 700;
+    }
+
+    .footer-links a {
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    @media (max-width: 920px) {
+      .nav-wrap {
+        justify-content: center;
+      }
+
+      .brand {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero-inner,
+      .cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        padding: 64px 0;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav-wrap,
+      .hero-inner,
+      .faq-section,
+      .cta-section,
+      .footer-inner {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .nav-links {
+        gap: 14px;
+        font-size: 0.88rem;
+      }
+
+      .brand img {
+        width: 66px;
+        height: 66px;
+      }
+
+      .brand-name strong {
+        font-size: 1.35rem;
+      }
+
+      .hero-actions {
+        display: grid;
+        width: 100%;
+      }
+
+      .button-primary,
+      .button-secondary {
+        width: 100%;
+      }
+
+      .hero-panel {
+        padding: 22px;
+        border-radius: 24px;
+      }
+
+      summary.faq-question {
+        padding: 20px;
+      }
+
+      .faq-answer {
+        padding: 0 20px 22px;
+      }
+
+      .cta-inner {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Pitch Perfect home">
+        <img src="logo6.jpg" alt="Pitch Perfect Piano Tuning & Repair Logo" />
+        <span class="brand-name">
+          <strong>Pitch Perfect</strong>
+          <span>Piano Tuning & Repair</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="faq.html" class="active">F.A.Q.</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <a class="nav-cta" href="schedule.html">Schedule Today</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Frequently Asked Questions</div>
+          <h1>Helpful answers before your <span class="gold-text">piano appointment.</span></h1>
+          <p class="hero-copy">
+            Not sure how often to tune, what cleaning does, or whether your piano needs more than a basic tuning? Here are the most common questions I get from customers.
+          </p>
+          <div class="hero-actions">
+            <a class="button-primary" href="schedule.html">Schedule Today</a>
+            <a class="button-secondary" href="contact.html">Ask a Question</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <h2>Quick help, clear answers.</h2>
+          <p>
+            These answers cover tuning frequency, service time, payment, mileage, cleaning, regulation, voicing, and what to expect during an appointment.
+          </p>
+          <div class="mini-list">
+            <span>Start with tuning frequency</span>
+            <span>Learn what each service means</span>
+            <span>Reach out anytime with questions</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="section-heading">
+        <div class="section-kicker">F.A.Q.</div>
+        <h2>Frequently Asked Questions</h2>
+        <p>Tap a question below to open the answer.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary class="faq-question">How often should a piano be tuned?</summary>
+          <div class="faq-answer">Most piano technicians, manufacturers, and experts recommend tuning every 6 to 12 months to maintain pitch stability and ensure long-term health of the instrument — especially in changing Louisiana weather.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">How long does a piano tuning take?</summary>
+          <div class="faq-answer">On average, expect around 2 hours — including setup, basic cleaning, and fine-tuning. If minor repairs are needed, I’ll take care of those as well in a timely manner.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What if my piano has not been tuned in years?</summary>
+          <div class="faq-answer">That is very common. If the piano is far below pitch, it may need a pitch raise before the fine tuning so it can hold pitch more accurately. I can check that when I arrive and let you know what your piano needs.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What is a regulation?</summary>
+          <div class="faq-answer">Regulation is all about making sure every mechanical part of your piano’s action — the internal mechanism that transfers motion from your fingers to the strings — is responsive and precise. It allows you to control dynamics and touch with consistency and ease.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What is voicing?</summary>
+          <div class="faq-answer">Voicing adjusts the tone of the piano, not the pitch. If your piano sounds too bright, too harsh, too soft, or uneven from note to note, voicing can help shape the sound and make the piano more enjoyable to play.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Why is cleaning my piano important?</summary>
+          <div class="faq-answer">Dust, moisture, and pests can wreak havoc on your piano. Regular cleanings can protect internal parts, prevent sticky keys, rust, and even long-term damage — and help maintain its value and appearance.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Can you fix sticky keys or broken pedals?</summary>
+          <div class="faq-answer">Yes. Sticky keys, dropped keys, squeaks, pedal issues, and small action problems are common. Some fixes are simple, while others may need a closer inspection before giving a final answer.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you accept electronic payments?</summary>
+          <div class="faq-answer">Yes! I accept Venmo, Zelle, PayPal, and then cash or checks — whatever works best for you.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you charge a mileage fee?</summary>
+          <div class="faq-answer">Yes, but it’s reasonable and based on distance. If you’re about 30 minutes from the center area of Baton Rouge, you’ll likely pay around $20–25. Mileage never exceeds $40 — the cost of a full tank.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you service churches, schools, and studios?</summary>
+          <div class="faq-answer">Yes. I work with home piano owners, churches, schools, studios, and musicians. If the piano is used often, regular maintenance can make a big difference in both sound and playability.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Should the room be quiet during tuning?</summary>
+          <div class="faq-answer">A quieter room definitely helps. I can work around normal household noise, but loud TVs, vacuums, or nearby music can make fine tuning harder and may slow the appointment down.</div>
+        </details>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-inner">
+        <div>
+          <h2>Still have questions?</h2>
+          <p>
+            Reach out anytime and I’ll be happy to help you figure out what your piano needs before scheduling.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a class="button-primary" href="schedule.html">Schedule Today</a>
+          <a class="button-secondary" href="tel:2259781470">Call or Text</a>
+          <a class="button-secondary" href="mailto:pitchperfecttuner@gmail.com">Send Email</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>&copy; 2025 Pitch Perfect Piano Tuning & Repair. Coded and created by Eli Horton.</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="faq.html">F.A.Q.</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
