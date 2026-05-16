@@ -4,302 +4,753 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Expert Piano Tuning in Baton Rouge - Pitch Perfect Piano Tuning</title>
-  <meta name="description" content="Certified Piano Tuning & Repair serving Baton Rouge and surrounding areas. Schedule professional in-home service today with Pitch Perfect.">
-  <meta property="og:title" content="Expert Piano Tuning in Baton Rouge - Pitch Perfect Piano Tuning">
-  <meta property="og:description" content="Professional in-home piano tuning and repair services serving Baton Rouge and surrounding areas.">
-  <meta property="og:image" content="https://www.pitchperfecttuningbr.com/logo6.jpg">
-  <meta property="og:url" content="https://www.pitchperfecttuningbr.com">
-  <meta name="twitter:card" content="summary_large_image">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Professional piano tuning, repair, cleaning, voicing, and regulation serving Baton Rouge and Louisiana." />
+  <meta property="og:title" content="Expert Piano Tuning in Baton Rouge - Pitch Perfect Piano Tuning" />
+  <meta property="og:description" content="Professional in-home piano tuning and repair services serving Baton Rouge and surrounding areas." />
+  <meta property="og:image" content="https://www.pitchperfecttuningbr.com/logo6.jpg" />
+  <meta property="og:url" content="https://www.pitchperfecttuningbr.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+
   <style>
-    body {
-      font-family: 'Playfair Display', serif;
-      background-color: #1e1e1e;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      color: #f0f0f0;
+    :root {
+      --bg: #11110f;
+      --bg-soft: #1b1a17;
+      --cream: #eee7d1;
+      --cream-dark: #d7caa9;
+      --gold: #caa75d;
+      --gold-soft: rgba(202, 167, 93, 0.18);
+      --text: #f8f4ea;
+      --muted: #c8c0ad;
+      --line: rgba(238, 231, 209, 0.16);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+      --radius: 22px;
     }
 
-    header {
-      background-color: #e8e2cc;
-      padding: 30px;
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(202, 167, 93, 0.16), transparent 34rem),
+        radial-gradient(circle at bottom right, rgba(232, 226, 204, 0.08), transparent 28rem),
+        var(--bg);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(17, 17, 15, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-wrap {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      min-width: 220px;
+    }
+
+    .brand img {
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
+    }
+
+    .brand-name {
+      display: grid;
+      line-height: 1;
+    }
+
+    .brand-name strong {
+      font-family: "Playfair Display", serif;
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-name span {
+      margin-top: 5px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-links {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    .logo {
-      max-height: 180px;
-      max-width: 100%;
-      object-fit: contain;
-    }
-
-    nav {
-      background-color: #e8e2cc;
-      padding: 15px 0;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
       flex-wrap: wrap;
-      margin: 0;
-    }
-
-    nav a {
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #666;
-    }
-
-    .tagline {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #ffffff;
-      margin: 40px 20px 20px;
-    }
-
-    main {
-      padding: 30px 20px;
-    }
-
-    main p {
-      font-size: 1.1rem;
-    }
-
-    .feature-image {
-      max-width: 80%;
-      max-height: 500px;
-      height: auto;
-      border-radius: 10px;
-      margin: 50px auto;
-      display: block;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    .schedule-button {
-      display: inline-block;
-      margin: 30px auto 50px;
-      padding: 14px 28px;
-      font-size: 1.2rem;
-      background-color: #e8e2cc;
-      color: #000;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .schedule-button:hover {
-      background-color: #d9d3bd;
-    }
-
-    .divider {
-      width: 80%;
-      height: 1px;
-      background-color: #777;
-      margin: 40px auto;
-    }
-
-    .services-section {
-      padding: 40px 20px;
-    }
-
-    .services-title {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #ffffff;
-      margin-bottom: 30px;
-    }
-
-    .services-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .service-item {
-      flex: 1 1 30%;
-      max-width: 30%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: stretch;
-      height: 100%;
-    }
-
-    .service-item img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    }
-
-    .service-item p {
-      margin-top: 10px;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    .service-description {
-      font-size: 1.1rem;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
       font-weight: 700;
-      margin-top: 8px;
-      color: #ccc;
     }
 
-    .contact-info {
-      background-color: #2a2a2a;
-      padding: 40px 20px;
-      margin-top: 60px;
-    }
-
-    .contact-message {
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: #f0f0f0;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .contact-message a {
-      color: #e8e2cc;
+    .nav-links a {
       text-decoration: none;
-      font-weight: bold;
+      transition: 0.2s ease;
     }
 
-    .contact-message a:hover {
-      text-decoration: underline;
+    .nav-links a:hover {
+      color: var(--cream);
     }
 
-    .custom-footer {
-      background-color: #2a2a2a;
-      color: #bbb;
-      padding: 20px 10px;
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid rgba(202, 167, 93, 0.5);
+      background: linear-gradient(135deg, var(--cream), var(--cream-dark));
+      color: #15130f;
+      text-decoration: none;
+      font-weight: 800;
+      padding: 12px 18px;
+      border-radius: 999px;
+      box-shadow: 0 12px 35px rgba(202, 167, 93, 0.16);
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover,
+    .button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 45px rgba(202, 167, 93, 0.25);
+    }
+
+    .hero {
+      min-height: 760px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(17, 17, 15, 0.95) 0%, rgba(17, 17, 15, 0.78) 43%, rgba(17, 17, 15, 0.55) 100%),
+        url("steinway.jpg") center/cover no-repeat;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 220px;
+      background: linear-gradient(transparent, var(--bg));
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 760px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 56px;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      border: 1px solid rgba(238, 231, 209, 0.18);
+      background: rgba(238, 231, 209, 0.08);
+      color: var(--cream);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 7px rgba(202, 167, 93, 0.15);
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3.2rem, 7vw, 6.4rem);
+      letter-spacing: -0.065em;
+      line-height: 0.92;
+      margin: 26px 0 22px;
+    }
+
+    .gold-text {
+      color: var(--gold);
+    }
+
+    .hero-copy {
+      max-width: 670px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.8vw, 1.24rem);
+      line-height: 1.75;
+      margin: 0 0 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 34px 0 26px;
+    }
+
+    .button-primary,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 850;
+      border-radius: 999px;
+      padding: 15px 22px;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, var(--cream), var(--cream-dark));
+      color: #15130f;
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(238, 231, 209, 0.2);
+      color: var(--cream);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .button-secondary:hover {
+      border-color: rgba(202, 167, 93, 0.55);
+      background: rgba(202, 167, 93, 0.12);
+    }
+
+    .quick-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 0.97rem;
+      font-weight: 650;
+    }
+
+    .quick-contact a {
+      color: var(--cream);
+      text-decoration-color: rgba(238, 231, 209, 0.35);
+      text-underline-offset: 4px;
+    }
+
+    .hero-card {
+      position: relative;
+      border: 1px solid rgba(238, 231, 209, 0.18);
+      background: linear-gradient(180deg, rgba(238, 231, 209, 0.12), rgba(238, 231, 209, 0.055));
+      border-radius: 32px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid rgba(238, 231, 209, 0.15);
+    }
+
+    .card-note {
+      padding: 18px 4px 4px;
+    }
+
+    .card-note strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      margin-bottom: 5px;
+    }
+
+    .card-note span {
+      color: var(--muted);
+      line-height: 1.55;
       font-size: 0.95rem;
     }
 
-    @media (max-width: 768px) {
+    .section {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 92px 0;
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.25rem, 4vw, 4.2rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      margin: 0;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 390px;
+      border: 1px solid rgba(238, 231, 209, 0.14);
+      border-radius: var(--radius);
+      background: var(--bg-soft);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.26);
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(202, 167, 93, 0.42);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.96) contrast(1.05);
+    }
+
+    .service-body {
+      padding: 22px;
+    }
+
+    .service-body h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.55rem;
+      margin: 0 0 8px;
+    }
+
+    .service-body p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .trust-item {
+      border: 1px solid rgba(238, 231, 209, 0.13);
+      background: rgba(238, 231, 209, 0.055);
+      border-radius: 20px;
+      padding: 22px;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 7px;
+    }
+
+    .trust-item span {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .cta-section {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto 90px;
+      border: 1px solid rgba(202, 167, 93, 0.28);
+      border-radius: 32px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(238, 231, 209, 0.12), rgba(202, 167, 93, 0.08)),
+        var(--bg-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-inner {
+      padding: 46px;
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .cta-inner h2 {
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      margin-bottom: 14px;
+    }
+
+    .cta-inner p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+      max-width: 720px;
+    }
+
+    .cta-actions {
+      display: grid;
+      gap: 12px;
+      justify-items: stretch;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: rgba(0, 0, 0, 0.22);
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-weight: 700;
+    }
+
+    .footer-links a {
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    @media (max-width: 920px) {
+      .nav-wrap {
+        justify-content: center;
+      }
+
+      .brand {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero-inner,
+      .section-header,
+      .cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        padding: 60px 0;
+        min-height: auto;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
       .services-grid {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .service-item {
-        max-width: 90%;
+      .trust-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav-wrap,
+      .hero-inner,
+      .section,
+      .cta-section,
+      .footer-inner {
+        width: min(100% - 28px, 1180px);
       }
 
-      .service-item img {
-        height: auto;
-        max-height: 240px;
-        object-fit: contain;
+      .nav-links {
+        gap: 14px;
+        font-size: 0.88rem;
+      }
+
+      .brand img {
+        width: 66px;
+        height: 66px;
+      }
+
+      .brand-name strong {
+        font-size: 1.35rem;
+      }
+
+      .hero-actions,
+      .quick-contact {
+        display: grid;
+        width: 100%;
+      }
+
+      .button-primary,
+      .button-secondary {
+        width: 100%;
+      }
+
+      .hero-card {
+        padding: 12px;
+        border-radius: 24px;
+      }
+
+      .hero-card img {
+        border-radius: 18px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: auto;
+      }
+
+      .cta-inner {
+        padding: 28px;
       }
     }
   </style>
 </head>
 <body>
+  <header class="topbar">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Pitch Perfect home">
+        <img src="logo6.jpg" alt="Pitch Perfect Piano Tuning & Repair Logo" />
+        <span class="brand-name">
+          <strong>Pitch Perfect</strong>
+          <span>Piano Tuning & Repair</span>
+        </span>
+      </a>
 
-  <header>
-    <a href="index.html">
-      <img src="logo6.jpg" alt="Pitch Perfect Logo" class="logo">
-    </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="faq.html">F.A.Q.</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <a class="nav-cta" href="schedule.html">Schedule Today</a>
+    </div>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="schedule.html">Schedule</a>
-    <a href="faq.html">F.A.Q.</a>
-    <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
-  </nav>
-
-  <div class="tagline">Serving the state of Louisiana with professional piano tuning, repairing, cleaning, and other services.</div>
-
   <main>
-    <p>Whether you're a beginner, a performer, casual, a church musician, or you just need a good tuning, we’ll make sure your piano sounds its best.</p>
-    <p>📞 Call or text: <a href="tel:2259781470" style="color: #66ccff;">(225) 978-1470</a></p>
-    <p>📧 Email: <a href="mailto:pitchperfecttuner@gmail.com" style="color: #66ccff;">pitchperfecttuner@gmail.com</a></p>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Professional Piano Care</div>
+          <h1>Professional piano care with a <span class="gold-text">trained perfect pitch ear.</span></h1>
+          <p class="hero-copy">
+            Whether you're a beginner, a performer, casual, a church musician, or you just need a good tuning, I'll make sure your piano sounds its best.
+          </p>
 
-    <img src="steinway.jpg" alt="Steinway Piano" class="feature-image">
+          <div class="hero-actions">
+            <a class="button-primary" href="schedule.html">Schedule Today</a>
+            <a class="button-secondary" href="tel:2259781470">Call or Text</a>
+          </div>
 
-    <a href="schedule.html" class="schedule-button">Schedule Today!</a>
+          <div class="quick-contact">
+            <span>📞 <a href="tel:2259781470">(225) 978-1470</a></span>
+            <span>✉️ <a href="mailto:pitchperfecttuner@gmail.com">pitchperfecttuner@gmail.com</a></span>
+          </div>
+        </div>
 
-    <div class="divider"></div>
+        <aside class="hero-card" aria-label="Piano service highlight">
+          <img src="steinway.jpg" alt="Grand piano on a concert stage" />
+          <div class="card-note">
+            <strong>In-home piano service</strong>
+            <span>Helping your piano sound its best whether it is used for lessons, worship, practice, or performance.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-    <section class="services-section">
-      <div class="services-title">Services Offered</div>
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">Services Offered</div>
+          <h2>Everything your piano needs to stay playable and beautiful.</h2>
+        </div>
+        <p>
+          From a standard tuning to deeper action work, Pitch Perfect helps bring out the best in your instrument with clear communication and professional service.
+        </p>
+      </div>
+
       <div class="services-grid">
-        <div class="service-item">
-          <img src="tuning.jpg" alt="Tuning">
-          <p>Tuning</p>
-          <div class="service-description">Make it sound pristine and professional right at home.</div>
+        <article class="service-card">
+          <img src="tuning.jpg" alt="Tuning" />
+          <div class="service-body">
+            <h3>Tuning</h3>
+            <p>Make it sound pristine and professional right at home.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="fixing.JPG" alt="Fixing" />
+          <div class="service-body">
+            <h3>Fixing</h3>
+            <p>Dropped keys, sticky keys, broken pedals, etc...</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="cleaning.JPG" alt="Cleaning" />
+          <div class="service-body">
+            <h3>Cleaning</h3>
+            <p>Make your piano look amazing along with sounding amazing.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="voicing.JPG" alt="Voicing" />
+          <div class="service-body">
+            <h3>Voicing</h3>
+            <p>Customize the sound and volume of your piano.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="regulation.JPG" alt="Regulation" />
+          <div class="service-body">
+            <h3>Regulation</h3>
+            <p>Taking a deeper look in the heart of the piano to make sure it is up to standards.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="other.JPG" alt="And More!" />
+          <div class="service-body">
+            <h3>And More!</h3>
+            <p>Along with other services related to your piano.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="trust-strip">
+        <div class="trust-item">
+          <strong>Simple scheduling</strong>
+          <span>Book online or reach out directly with questions before setting an appointment.</span>
         </div>
-        <div class="service-item">
-          <img src="fixing.JPG" alt="Fixing">
-          <p>Fixing</p>
-          <div class="service-description">Dropped keys, sticky keys, broken pedals, etc...</div>
+        <div class="trust-item">
+          <strong>Local service</strong>
+          <span>Serving Baton Rouge and surrounding Louisiana communities.</span>
         </div>
-        <div class="service-item">
-          <img src="cleaning.JPG" alt="Cleaning">
-          <p>Cleaning</p>
-          <div class="service-description">Make your piano look amazing along with sounding amazing.</div>
-        </div>
-        <div class="service-item">
-          <img src="voicing.JPG" alt="Voicing">
-          <p>Voicing</p>
-          <div class="service-description">Customize the sound and volume of your piano.</div>
-        </div>
-        <div class="service-item">
-          <img src="regulation.JPG" alt="Regulation">
-          <p>Regulation</p>
-          <div class="service-description">Taking a deeper look in the heart of the piano to make sure it is up to standards.</div>
-        </div>
-        <div class="service-item">
-          <img src="other.JPG" alt="And More!">
-          <p>And More!</p>
-          <div class="service-description">Along with other services related to your piano.</div>
+        <div class="trust-item">
+          <strong>Clear communication</strong>
+          <span>You will know what your piano needs before bigger repair work is done.</span>
         </div>
       </div>
     </section>
 
-    <section class="contact-info" style="margin-bottom: 0;">
-  <p class="contact-message">
-    If you have any questions, concerns, or would like to go ahead and schedule with just a few taps,
-    contact Eli at <a href="tel:2259781470" style="color: #66ccff;">(225) 978-1470</a> or 
-    <a href="mailto:pitchperfecttuner@gmail.com" style="color: #66ccff;">pitchperfecttuner@gmail.com</a>.
-  </p>
-</section>
-
-    <!-- Bottom Navigation Bar -->
-    <nav style="background-color: #2a2a2a; margin-top: 5px; margin-bottom: 5px; padding: 10px 0; font-size: 1rem; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-      <a href="index.html" style="color: #e8e2cc; text-decoration: none; font-weight: bold; transition: color 0.3s ease;">Home</a>
-      <a href="schedule.html" style="color: #e8e2cc; text-decoration: none; font-weight: bold; transition: color 0.3s ease;">Schedule</a>
-      <a href="faq.html" style="color: #e8e2cc; text-decoration: none; font-weight: bold; transition: color 0.3s ease;">F.A.Q.</a>
-      <a href="contact.html" style="color: #e8e2cc; text-decoration: none; font-weight: bold; transition: color 0.3s ease;">Contact</a>
-      <a href="about.html" style="color: #e8e2cc; text-decoration: none; font-weight: bold; transition: color 0.3s ease;">About</a>
-    </nav>
-
-    <style>
-      nav a:hover {
-        color: #c4bda9 !important;
-      }
-    </style>
-
-    <footer class="custom-footer" style="margin-top: 5px;">
-      <p>&copy; 2025 Pitch Perfect Piano Tuning & Repair — Coded and created by Eli Horton.</p>
-    </footer>
+    <section class="cta-section">
+      <div class="cta-inner">
+        <div>
+          <h2>Ready to get your piano sounding right?</h2>
+          <p>
+            Schedule with just a few taps, or contact Eli if you have questions about tuning, repairs, cleaning, or what your piano may need.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a class="button-primary" href="schedule.html">Schedule Today</a>
+          <a class="button-secondary" href="tel:2259781470">Call or Text</a>
+          <a class="button-secondary" href="mailto:pitchperfecttuner@gmail.com">Send Email</a>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <footer>
+    <div class="footer-inner">
+      <span>&copy; 2025 Pitch Perfect Piano Tuning & Repair. Coded and created by Eli Horton.</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="faq.html">F.A.Q.</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </footer>
 </body>
-</html> 
+</html>
