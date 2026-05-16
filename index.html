@@ -220,8 +220,12 @@
       margin: 26px 0 22px;
     }
 
+    .gold-text {
+      color: var(--gold);
+    }
+
     .hero-copy {
-      max-width: 660px;
+      max-width: 670px;
       color: var(--muted);
       font-size: clamp(1.05rem, 1.8vw, 1.24rem);
       line-height: 1.75;
@@ -300,10 +304,6 @@
     }
 
     .card-note {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 16px;
-      align-items: center;
       padding: 18px 4px 4px;
     }
 
@@ -318,17 +318,6 @@
       color: var(--muted);
       line-height: 1.55;
       font-size: 0.95rem;
-    }
-
-    .mini-badge {
-      border-radius: 18px;
-      background: var(--gold-soft);
-      color: var(--cream);
-      border: 1px solid rgba(202, 167, 93, 0.35);
-      padding: 12px 14px;
-      text-align: center;
-      font-weight: 850;
-      white-space: nowrap;
     }
 
     .section {
@@ -413,7 +402,7 @@
       color: var(--muted);
       line-height: 1.6;
       margin: 0;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .trust-strip {
@@ -589,10 +578,6 @@
         border-radius: 18px;
       }
 
-      .card-note {
-        grid-template-columns: 1fr;
-      }
-
       .services-grid {
         grid-template-columns: 1fr;
       }
@@ -634,10 +619,10 @@
     <section class="hero">
       <div class="hero-inner">
         <div>
-          <div class="eyebrow">Serving Louisiana</div>
-          <h1>Professional piano care with a cleaner, richer sound.</h1>
+          <div class="eyebrow">Professional Piano Care</div>
+          <h1>Professional piano care with a <span class="gold-text">trained perfect pitch ear.</span></h1>
           <p class="hero-copy">
-            Piano tuning, repair, cleaning, voicing, regulation, and other piano services for homes, churches, schools, and performers across Baton Rouge and the surrounding area.
+            Whether you're a beginner, a performer, casual, a church musician, or you just need a good tuning, I'll make sure your piano sounds its best.
           </p>
 
           <div class="hero-actions">
@@ -654,11 +639,8 @@
         <aside class="hero-card" aria-label="Piano service highlight">
           <img src="steinway.jpg" alt="Grand piano on a concert stage" />
           <div class="card-note">
-            <div>
-              <strong>In-home piano service</strong>
-              <span>Helping your piano sound its best whether it is used for lessons, worship, practice, or performance.</span>
-            </div>
-            <div class="mini-badge">Tuning<br />Repair<br />Cleaning</div>
+            <strong>In-home piano service</strong>
+            <span>Helping your piano sound its best whether it is used for lessons, worship, practice, or performance.</span>
           </div>
         </aside>
       </div>
@@ -677,50 +659,50 @@
 
       <div class="services-grid">
         <article class="service-card">
-          <img src="tuning.jpg" alt="Piano tuning service" />
+          <img src="tuning.jpg" alt="Tuning" />
           <div class="service-body">
             <h3>Tuning</h3>
-            <p>Bring your piano back to a clean, balanced, and professional sound right at home.</p>
+            <p>Make it sound pristine and professional right at home.</p>
           </div>
         </article>
 
         <article class="service-card">
-          <img src="fixing.JPG" alt="Piano repair service" />
+          <img src="fixing.JPG" alt="Fixing" />
           <div class="service-body">
-            <h3>Repair</h3>
-            <p>Help with dropped keys, sticky keys, broken pedals, action issues, and more.</p>
+            <h3>Fixing</h3>
+            <p>Dropped keys, sticky keys, broken pedals, etc...</p>
           </div>
         </article>
 
         <article class="service-card">
-          <img src="cleaning.JPG" alt="Piano cleaning service" />
+          <img src="cleaning.JPG" alt="Cleaning" />
           <div class="service-body">
             <h3>Cleaning</h3>
-            <p>Make your piano look better while keeping the inside cleaner and more cared for.</p>
+            <p>Make your piano look amazing along with sounding amazing.</p>
           </div>
         </article>
 
         <article class="service-card">
-          <img src="voicing.JPG" alt="Piano voicing service" />
+          <img src="voicing.JPG" alt="Voicing" />
           <div class="service-body">
             <h3>Voicing</h3>
-            <p>Adjust the tone and volume character of your piano for a smoother sound.</p>
+            <p>Customize the sound and volume of your piano.</p>
           </div>
         </article>
 
         <article class="service-card">
-          <img src="regulation.JPG" alt="Piano regulation service" />
+          <img src="regulation.JPG" alt="Regulation" />
           <div class="service-body">
             <h3>Regulation</h3>
-            <p>Fine-tune the action so your piano feels more responsive and consistent.</p>
+            <p>Taking a deeper look in the heart of the piano to make sure it is up to standards.</p>
           </div>
         </article>
 
         <article class="service-card">
-          <img src="other.JPG" alt="Additional piano services" />
+          <img src="other.JPG" alt="And More!" />
           <div class="service-body">
-            <h3>And More</h3>
-            <p>Other piano-related services available depending on the instrument and need.</p>
+            <h3>And More!</h3>
+            <p>Along with other services related to your piano.</p>
           </div>
         </article>
       </div>
