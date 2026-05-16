@@ -218,21 +218,22 @@
     }
 
     .about-section {
-      width: min(1120px, calc(100% - 40px));
+      width: min(1080px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 86px 0 74px;
+      padding: 72px 0 68px;
     }
 
     .about-card {
       display: grid;
-      grid-template-columns: 0.82fr 1.18fr;
-      gap: 46px;
+      grid-template-columns: minmax(300px, 420px) minmax(0, 1fr);
+      gap: 42px;
       align-items: center;
       border: 1px solid rgba(238, 231, 209, 0.14);
       background: linear-gradient(180deg, rgba(238, 231, 209, 0.075), rgba(238, 231, 209, 0.035));
       border-radius: 32px;
-      padding: 28px;
+      padding: 34px;
       box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
     .portrait-wrap {
@@ -254,7 +255,8 @@
       z-index: 1;
       display: block;
       width: 100%;
-      max-height: 620px;
+      height: auto;
+      max-height: 540px;
       object-fit: cover;
       border-radius: 26px;
       border: 1px solid rgba(238, 231, 209, 0.16);
@@ -276,17 +278,18 @@
 
     h2 {
       font-family: "Playfair Display", serif;
-      font-size: clamp(2.3rem, 5vw, 4.3rem);
-      line-height: 1;
+      font-size: clamp(2.1rem, 4.2vw, 4.4rem);
+      line-height: 0.98;
       letter-spacing: -0.055em;
       margin: 0 0 22px;
+      max-width: 100%;
     }
 
     .bio-text p {
       color: var(--muted);
-      font-size: 1.06rem;
-      line-height: 1.82;
-      margin: 0 0 20px;
+      font-size: 1.03rem;
+      line-height: 1.78;
+      margin: 0 0 18px;
     }
 
     .bio-text p:last-child {
@@ -563,7 +566,7 @@
           <div class="section-kicker">The Story</div>
           <h2>“He who has ears, let him tune!”</h2>
 
-          <p>Hey everyone! I'm Eli — a Certified Piano Technician (CPT) through the Piano Technicians Academy, and a lifelong musician trained in classical piano since 2011. Music has always been a big part of my life, and now I'm blessed to use that passion to help others enjoy their instruments at home.</p>
+          <p>Hey everyone! I'm Eli — a Certified Piano Technician (CPT) through the Piano Technicians Academy, and a lifelong musician trained in classical piano since 2011. Music has always been a big part of my life, and now I'm blessed to use that passion to help others enjoy their instruments at home. From a young age, I believe God blessed me with perfect pitch, and that gift has shaped the way I hear, play, and work with music.</p>
 
           <p>Born and raised in Baton Rouge, Louisiana, I started Pitch Perfect Piano Tuning & Repair with a heart to serve people. It began as a way to help out family and friends, but word spread quickly — and before long, the Lord began blessing me with more opportunities and connections than I could’ve imagined. I believe God gave me both the hands and the heart to work, train, and build relationships through music.</p>
 
