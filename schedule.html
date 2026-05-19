@@ -1,235 +1,620 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    if (window.location.hostname === "pitchperfecttuningbr.com") {
-      window.location.replace("https://www.pitchperfecttuningbr.com" + window.location.pathname);
-    }
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Schedule | Pitch Perfect Piano Tuning & Repair</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Schedule piano tuning, repairs, voicing, regulation, or other piano services with Pitch Perfect Piano Tuning & Repair in Baton Rouge and Louisiana." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+
   <style>
-    body {
-      font-family: 'Playfair Display', serif;
-      background-color: #1e1e1e;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      color: #f0f0f0;
+    :root {
+      --bg: #11110f;
+      --bg-soft: #1b1a17;
+      --cream: #eee7d1;
+      --cream-dark: #d7caa9;
+      --gold: #caa75d;
+      --gold-soft: rgba(202, 167, 93, 0.18);
+      --text: #f8f4ea;
+      --muted: #c8c0ad;
+      --line: rgba(238, 231, 209, 0.16);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+      --radius: 22px;
     }
 
-    header {
-      background-color: #e8e2cc;
-      padding: 30px;
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(202, 167, 93, 0.16), transparent 34rem),
+        radial-gradient(circle at bottom right, rgba(232, 226, 204, 0.08), transparent 28rem),
+        var(--bg);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(17, 17, 15, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-wrap {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      min-width: 220px;
+    }
+
+    .brand img {
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
+    }
+
+    .brand-name {
+      display: grid;
+      line-height: 1;
+    }
+
+    .brand-name strong {
+      font-family: "Playfair Display", serif;
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-name span {
+      margin-top: 5px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-links {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    .logo {
-      max-height: 180px;
-      max-width: 100%;
-      object-fit: contain;
-    }
-
-    nav {
-      background-color: #e8e2cc;
-      padding: 15px 0;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
       flex-wrap: wrap;
-      margin: 0;
-    }
-
-    nav a {
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #666;
-    }
-
-    .page-title {
-      font-size: 2.2rem;
-      font-weight: bold;
-      margin: 60px 20px 30px;
-    }
-
-    .coming-soon {
-      font-size: 1.3rem;
-      color: #ccc;
-      margin-bottom: 100px;
-    }
-
-    .contact-info {
-      background-color: #2a2a2a;
-      padding: 40px 20px;
-      margin-top: 60px;
-    }
-
-    .contact-message {
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: #f0f0f0;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .contact-message a {
-      color: #e8e2cc;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .contact-message a:hover {
-      text-decoration: underline;
-    }
-
-    .custom-footer {
-      background-color: #2a2a2a;
-      color: #bbb;
-      padding: 20px 10px;
+      gap: 24px;
+      color: var(--muted);
       font-size: 0.95rem;
-    }
-      .schedule-form {
-      max-width: 600px;
-      margin: 40px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 0 20px;
+      font-weight: 700;
     }
 
-    .schedule-form label {
-      text-align: left;
-      font-size: 1.1rem;
-      font-weight: bold;
+    .nav-links a {
+      text-decoration: none;
+      transition: 0.2s ease;
     }
 
-    .schedule-form input,
-    .schedule-form select {
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: none;
-      background-color: #2a2a2a;
-      color: #f0f0f0;
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--cream);
     }
 
-    .schedule-form select[multiple] {
-      height: 150px;
+    .nav-cta,
+    .button-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(202, 167, 93, 0.5);
+      background: linear-gradient(135deg, var(--cream), var(--cream-dark));
+      color: #15130f;
+      text-decoration: none;
+      font-weight: 900;
+      border-radius: 999px;
+      box-shadow: 0 12px 35px rgba(202, 167, 93, 0.16);
+      transition: 0.22s ease;
+      white-space: nowrap;
     }
 
-    .schedule-form option:checked {
-      background-color: #1e1e1e;
+    .nav-cta {
+      padding: 12px 18px;
     }
 
-    .schedule-form option {
-      padding: 6px;
-    }
-      .checkbox-group {
-      text-align: left;
-      font-size: 1rem;
-      color: #f0f0f0;
-    }
-
-    .checkbox-group label {
-      display: block;
-      margin-bottom: 8px;
+    .button-primary {
+      margin-top: 28px;
+      padding: 20px 46px;
+      font-size: 1.12rem;
+      letter-spacing: 0.02em;
+      min-width: 250px;
+      box-shadow: 0 18px 45px rgba(202, 167, 93, 0.24);
     }
 
-    .checkbox-group input[type="checkbox"] {
-      accent-color: #00aaff;
-    }
-      .schedule-form textarea {
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: none;
-      background-color: #2a2a2a;
-      color: #f0f0f0;
-      resize: vertical;
+    .nav-cta:hover,
+    .button-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 24px 55px rgba(202, 167, 93, 0.32);
     }
 
-    .submit-button {
-      padding: 12px 24px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      background-color: #e8e2cc;
-      color: #000;
-      border: none;
-      border-radius: 6px;
+    .page-intro {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(17, 17, 15, 0.96), rgba(17, 17, 15, 0.84)),
+        url("steinway.jpg") center/cover no-repeat;
+    }
+
+    .page-intro::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 120px;
+      background: linear-gradient(transparent, var(--bg));
+      pointer-events: none;
+    }
+
+    .page-intro-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1000px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 76px 0 68px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      margin: 0 auto;
+      border: 1px solid rgba(238, 231, 209, 0.18);
+      background: rgba(238, 231, 209, 0.08);
+      color: var(--cream);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 7px rgba(202, 167, 93, 0.15);
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 6vw, 5.6rem);
+      letter-spacing: -0.065em;
+      line-height: 0.95;
+      margin: 24px 0 20px;
+    }
+
+    .gold-text {
+      color: var(--gold);
+    }
+
+    .page-intro p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.8vw, 1.18rem);
+      line-height: 1.75;
+    }
+
+    .schedule-section {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 82px 0 90px;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 38px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.25rem, 4.5vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      margin: 0 0 16px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .service-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 38px;
+    }
+
+    .service-option {
+      display: grid;
+      border: 1px solid rgba(238, 231, 209, 0.14);
+      background: linear-gradient(180deg, rgba(238, 231, 209, 0.075), rgba(238, 231, 209, 0.035));
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.26);
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      text-align: left;
+      color: var(--text);
+      padding: 0;
+      font: inherit;
+      transition: 0.24s ease;
     }
 
-    .submit-button:hover {
-      background-color: #d9d3bd;
+    .service-option:hover,
+    .service-option.selected {
+      transform: translateY(-5px);
+      border-color: rgba(202, 167, 93, 0.52);
+      box-shadow: 0 24px 65px rgba(0, 0, 0, 0.34);
+    }
+
+    .service-option.selected {
+      background: linear-gradient(180deg, rgba(202, 167, 93, 0.16), rgba(238, 231, 209, 0.04));
+    }
+
+    .option-image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #0b0b0a;
+    }
+
+    .option-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.96) contrast(1.05);
+      transition: 0.3s ease;
+    }
+
+    .service-option:hover .option-image img,
+    .service-option.selected .option-image img {
+      transform: scale(1.04);
+    }
+
+    .option-body {
+      padding: 24px;
+    }
+
+    .option-body h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.75rem;
+      letter-spacing: -0.035em;
+      margin: 0 0 10px;
+    }
+
+    .option-body p {
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+      font-weight: 550;
+    }
+
+    .option-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      color: var(--cream);
+      font-weight: 850;
+      text-decoration: underline;
+      text-decoration-color: rgba(202, 167, 93, 0.48);
+      text-underline-offset: 5px;
+    }
+
+    .selected-service {
+      border: 1px solid rgba(238, 231, 209, 0.14);
+      background: linear-gradient(180deg, rgba(238, 231, 209, 0.075), rgba(238, 231, 209, 0.035));
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      padding: 34px;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .selected-service h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.25rem;
+      letter-spacing: -0.04em;
+      margin: 0 0 12px;
+    }
+
+    .selected-service p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+      font-size: 1.02rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: rgba(0, 0, 0, 0.22);
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-weight: 700;
+    }
+
+    .footer-links a {
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px) {
+      .nav-wrap {
+        justify-content: center;
+      }
+
+      .brand {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .service-options {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav-wrap,
+      .page-intro-inner,
+      .schedule-section,
+      .footer-inner {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .nav-links {
+        gap: 14px;
+        font-size: 0.88rem;
+      }
+
+      .brand img {
+        width: 66px;
+        height: 66px;
+      }
+
+      .brand-name strong {
+        font-size: 1.35rem;
+      }
+
+      .page-intro-inner {
+        padding: 58px 0 54px;
+      }
+
+      .schedule-section {
+        padding: 58px 0 70px;
+      }
+
+      .selected-service {
+        padding: 24px;
+        border-radius: 24px;
+      }
+
+      .button-primary {
+        width: 100%;
+        min-width: 0;
+        padding: 19px 24px;
+      }
     }
   </style>
 </head>
+
 <body>
+  <header class="topbar">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Pitch Perfect home">
+        <img src="logo6.jpg" alt="Pitch Perfect Piano Tuning & Repair Logo" />
+        <span class="brand-name">
+          <strong>Pitch Perfect</strong>
+          <span>Piano Tuning & Repair</span>
+        </span>
+      </a>
 
-  <header>
-  <a href="index.html">
-    <img src="logo6.jpg" alt="Pitch Perfect Logo" class="logo">
-  </a>
-</header>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="schedule.html" class="active">Schedule</a>
+        <a href="faq.html">F.A.Q.</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="schedule.html">Schedule</a>
-    <a href="faq.html">F.A.Q.</a>
-    <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
-  </nav>
+      <a class="nav-cta" href="#booking-options">Schedule Today</a>
+    </div>
+  </header>
 
-  <div class="page-title">Schedule a Servicing Appointment</div>
-  <form class="schedule-form" action="https://usebasin.com/f/85f6d20b0731" method="POST">
-    <label for="name">Name (required)</label>
-    <input type="text" id="name" name="name" required>
+  <main>
+    <section class="page-intro">
+      <div class="page-intro-inner">
+        <div class="eyebrow">Schedule Service</div>
+        <h1>Choose what your <span class="gold-text">piano needs.</span></h1>
+        <p>
+          Select the service that best fits your piano, then continue to the booking page that matches what you need.
+        </p>
+      </div>
+    </section>
 
-    <label for="phone">Phone Number (required)</label>
-    <input type="tel" id="phone" name="phone" required>
+    <section class="schedule-section">
+      <div class="section-heading">
+        <div class="section-kicker">Start Here</div>
+        <h2>What can I help with?</h2>
+        <p>Pick one option below. Your choice will automatically update the booking button.</p>
+      </div>
 
-    <label for="email">Email (optional)</label>
-    <input type="email" id="email" name="email">
+      <div class="service-options" aria-label="Service options">
+        <button
+          class="service-option selected"
+          type="button"
+          data-service="Tuning"
+          data-description="Whether your piano is just slightly out or badly out of tune, I have you covered."
+          data-link="https://www.pitchperfecttuningbr.com/tuningquestions.html"
+        >
+          <div class="option-image">
+            <img src="standardtune.jpg" alt="Standard piano tuning" />
+          </div>
+          <div class="option-body">
+            <h3>Tuning</h3>
+            <p>Whether your piano is just slightly out or badly out of tune, I have you covered.</p>
+            <span class="option-action">Select tuning</span>
+          </div>
+        </button>
 
-    <label for="communication">Preferred Communication Method</label>
-    <select id="communication" name="communication">
-      <option value="text">Text</option>
-      <option value="phone">Phone Call</option>
-      <option value="email">Email</option>
-    </select>
+        <button
+          class="service-option"
+          type="button"
+          data-service="Repairs"
+          data-description="For sticky keys, dropped keys, broken pedals, strange noises, or other piano repair concerns."
+          data-link="https://tidycal.com/pitchperfecttuner/repair-appointment"
+        >
+          <div class="option-image">
+            <img src="RepairsRegulation.jpeg" alt="Piano repairs and regulation" />
+          </div>
+          <div class="option-body">
+            <h3>Repairs</h3>
+            <p>For sticky keys, dropped keys, broken pedals, strange noises, or other piano repair concerns.</p>
+            <span class="option-action">Select repairs</span>
+          </div>
+        </button>
 
-    <label>Contact Reason <span style="font-size: 0.9rem; color: #aaa;">(Select all that apply)</span></label>
-<div class="checkbox-group">
-  <label><input type="checkbox" name="reason" value="tuning"> Tuning</label><br>
-  <label><input type="checkbox" name="reason" value="repair"> Repair</label><br>
-  <label><input type="checkbox" name="reason" value="cleaning"> Cleaning</label><br>
-  <label><input type="checkbox" name="reason" value="voicing"> Voicing</label><br>
-  <label><input type="checkbox" name="reason" value="regulation"> Regulation</label><br>
-  <label><input type="checkbox" name="reason" value="concern"> Concern</label><br>
-  <label><input type="checkbox" name="reason" value="other"> Other (specify below)</label>
-</div>
+        <button
+          class="service-option"
+          type="button"
+          data-service="Other"
+          data-description="For inquiries about voicing, regulation, cleaning, or anything else your piano may need."
+          data-link="https://www.pitchperfecttuningbr.com/contact.html"
+        >
+          <div class="option-image">
+            <img src="PitchRaise.jpg" alt="Other piano services" />
+          </div>
+          <div class="option-body">
+            <h3>Other</h3>
+            <p>For inquiries about voicing, regulation, cleaning, or anything else your piano may need.</p>
+            <span class="option-action">Select other</span>
+          </div>
+        </button>
+      </div>
 
-    <label for="description">Description <span style="font-size: 0.9rem; color: #aaa;">(optional)</span></label>
-    <textarea id="description" name="description" rows="5"></textarea>
+      <div class="selected-service" id="booking-options">
+        <div class="section-kicker">Selected Service</div>
+        <h3 id="selectedTitle">Tuning</h3>
+        <p id="selectedDescription">
+          Whether your piano is just slightly out or badly out of tune, I have you covered.
+        </p>
 
-    <button type="submit" class="submit-button">Submit</button>
-  </form>
+        <a id="bookingLink" class="button-primary" href="https://www.pitchperfecttuningbr.com/tuningquestions.html">
+          Continue to Booking
+        </a>
+      </div>
+    </section>
+  </main>
 
-  <footer class="custom-footer">
-    <p>&copy; 2025 Pitch Perfect Piano Tuning & Repair — Coded and created by Eli Horton.</p>
+  <footer>
+    <div class="footer-inner">
+      <span>&copy; 2026 Pitch Perfect Piano Tuning & Repair. Coded and created by Eli Horton.</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="faq.html">F.A.Q.</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
   </footer>
 
+  <script>
+    const options = document.querySelectorAll(".service-option");
+    const selectedTitle = document.getElementById("selectedTitle");
+    const selectedDescription = document.getElementById("selectedDescription");
+    const bookingLink = document.getElementById("bookingLink");
+
+    options.forEach((option) => {
+      option.addEventListener("click", () => {
+        options.forEach((item) => item.classList.remove("selected"));
+        option.classList.add("selected");
+
+        const service = option.dataset.service;
+        const description = option.dataset.description;
+        const link = option.dataset.link;
+
+        selectedTitle.textContent = service;
+        selectedDescription.textContent = description;
+        bookingLink.href = link;
+        bookingLink.textContent = "Continue to " + service + " Booking";
+
+        document.getElementById("booking-options").scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      });
+    });
+  </script>
 </body>
 </html>
