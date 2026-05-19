@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuning Questions | Pitch Perfect Piano Tuning & Repair</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #11110f;
+      color: #f8f4ea;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #1b1a17;
+      border: 1px solid rgba(238, 231, 209, 0.16);
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 2.4rem;
+      color: #caa75d;
+    }
+
+    p {
+      color: #c8c0ad;
+      line-height: 1.6;
+    }
+
+    .question {
+      margin-top: 30px;
+    }
+
+    label {
+      display: block;
+      background: rgba(238, 231, 209, 0.07);
+      border: 1px solid rgba(238, 231, 209, 0.14);
+      border-radius: 14px;
+      padding: 15px 18px;
+      margin: 10px 0;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    label:hover {
+      border-color: rgba(202, 167, 93, 0.6);
+      background: rgba(202, 167, 93, 0.12);
+    }
+
+    input {
+      margin-right: 10px;
+    }
+
+    button {
+      margin-top: 30px;
+      width: 100%;
+      border: none;
+      background: linear-gradient(135deg, #eee7d1, #d7caa9);
+      color: #15130f;
+      font-weight: 900;
+      font-size: 1rem;
+      padding: 18px 24px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    .error {
+      display: none;
+      margin-top: 18px;
+      color: #ffb4a8;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 22px;
+      color: #caa75d;
+      text-decoration: none;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <a class="back-link" href="schedule.html">← Back to services</a>
+
+    <h1>A couple quick tuning questions</h1>
+    <p>
+      These questions help me send you to the right booking option for your piano.
+    </p>
+
+    <form id="tuningForm">
+      <div class="question">
+        <h2>Do you know the last time your piano was tuned?</h2>
+
+        <label>
+          <input type="radio" name="lastTuned" value="0-1" />
+          0-1 years
+        </label>
+
+        <label>
+          <input type="radio" name="lastTuned" value="1-3" />
+          1-3 years
+        </label>
+
+        <label>
+          <input type="radio" name="lastTuned" value="3-10" />
+          3-10 years
+        </label>
+
+        <label>
+          <input type="radio" name="lastTuned" value="10+" />
+          10 years+
+        </label>
+
+        <label>
+          <input type="radio" name="lastTuned" value="unknown" />
+          Unknown
+        </label>
+      </div>
+
+      <div class="question">
+        <h2>Has your piano been moved in the past 3 months?</h2>
+
+        <label>
+          <input type="radio" name="moved" value="yes" />
+          Yes, it has been moved in the past 3 months
+        </label>
+
+        <label>
+          <input type="radio" name="moved" value="no" />
+          No, it has not been moved in the past 3 months
+        </label>
+      </div>
+
+      <button type="submit">Continue to Booking</button>
+
+      <div class="error" id="errorMessage">
+        Please answer both questions before continuing.
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("tuningForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const lastTuned = document.querySelector('input[name="lastTuned"]:checked');
+      const moved = document.querySelector('input[name="moved"]:checked');
+      const errorMessage = document.getElementById("errorMessage");
+
+      if (!lastTuned || !moved) {
+        errorMessage.style.display = "block";
+        return;
+      }
+
+      const standardTuningLink = "https://tidycal.com/pitchperfecttuner/standard-tuning";
+      const pitchRaiseLink = "https://tidycal.com/pitchperfecttuner/pitch-raise";
+
+      const goesToStandard =
+        (lastTuned.value === "0-1" && moved.value === "no") ||
+        (lastTuned.value === "1-3" && moved.value === "no");
+
+      if (goesToStandard) {
+        window.location.href = standardTuningLink;
+      } else {
+        window.location.href = pitchRaiseLink;
+      }
+    });
+  </script>
+</body>
+</html>
