@@ -3,158 +3,606 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Pitch Perfect Piano Tuning & Repair</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <title>Contact | Pitch Perfect Piano Tuning & Repair</title>
+  <meta name="description" content="Contact Pitch Perfect Piano Tuning & Repair for general questions about piano tuning, repair, cleaning, voicing, regulation, and service in Baton Rouge and Louisiana." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+
   <style>
-    body {
-      font-family: 'Playfair Display', serif;
-      background-color: #1e1e1e;
-      color: #f0f0f0;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+    :root {
+      --bg: #11110f;
+      --bg-soft: #1b1a17;
+      --cream: #eee7d1;
+      --cream-dark: #d7caa9;
+      --gold: #caa75d;
+      --gold-soft: rgba(202, 167, 93, 0.18);
+      --text: #f8f4ea;
+      --muted: #c8c0ad;
+      --line: rgba(238, 231, 209, 0.16);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+      --radius: 22px;
     }
 
-    header {
-      background-color: #e8e2cc;
-      padding: 30px;
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(202, 167, 93, 0.16), transparent 34rem),
+        radial-gradient(circle at bottom right, rgba(232, 226, 204, 0.08), transparent 28rem),
+        var(--bg);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(17, 17, 15, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-wrap {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      min-width: 220px;
+    }
+
+    .brand img {
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
+    }
+
+    .brand-name {
+      display: grid;
+      line-height: 1;
+    }
+
+    .brand-name strong {
+      font-family: "Playfair Display", serif;
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-name span {
+      margin-top: 5px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-links {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    .logo {
-      max-height: 180px;
-      max-width: 100%;
-      object-fit: contain;
-    }
-
-    nav {
-      background-color: #e8e2cc;
-      padding: 15px 0;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
       flex-wrap: wrap;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
     }
 
-    nav a {
-      color: #333;
+    .nav-links a {
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
+      transition: 0.2s ease;
     }
 
-    nav a:hover {
-      color: #666;
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--cream);
     }
 
-    .contact-container {
-      max-width: 700px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: #2a2a2a;
-      border-radius: 10px;
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(202, 167, 93, 0.5);
+      background: linear-gradient(135deg, var(--cream), var(--cream-dark));
+      color: #15130f;
+      text-decoration: none;
+      font-weight: 800;
+      padding: 12px 18px;
+      border-radius: 999px;
+      box-shadow: 0 12px 35px rgba(202, 167, 93, 0.16);
+      transition: 0.2s ease;
+      white-space: nowrap;
     }
 
-    .contact-container h1 {
-      color: #e8e2cc;
-      margin-bottom: 20px;
+    .nav-cta:hover,
+    .button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 45px rgba(202, 167, 93, 0.25);
     }
 
-    .contact-container p {
-      margin-bottom: 30px;
+    .page-intro {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(17, 17, 15, 0.96), rgba(17, 17, 15, 0.84)),
+        url("steinway.jpg") center/cover no-repeat;
     }
 
-    .contact-container p a {
-      color: #66ccff;
-      font-weight: bold;
+    .page-intro::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 120px;
+      background: linear-gradient(transparent, var(--bg));
+      pointer-events: none;
     }
 
-    .contact-container p a:hover {
-      color: #3399cc;
+    .page-intro-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1000px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 76px 0 68px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      margin: 0 auto;
+      border: 1px solid rgba(238, 231, 209, 0.18);
+      background: rgba(238, 231, 209, 0.08);
+      color: var(--cream);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 7px rgba(202, 167, 93, 0.15);
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 6vw, 5.6rem);
+      letter-spacing: -0.065em;
+      line-height: 0.95;
+      margin: 24px 0 20px;
+    }
+
+    .gold-text {
+      color: var(--gold);
+    }
+
+    .page-intro p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.8vw, 1.18rem);
+      line-height: 1.75;
+    }
+
+    .contact-section {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 82px 0 90px;
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-info,
+    .form-card {
+      border: 1px solid rgba(238, 231, 209, 0.14);
+      background: linear-gradient(180deg, rgba(238, 231, 209, 0.075), rgba(238, 231, 209, 0.035));
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-info {
+      padding: 32px;
+      position: sticky;
+      top: 126px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      margin: 0 0 16px;
+    }
+
+    .contact-info p,
+    .form-intro {
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+      font-size: 1.03rem;
+    }
+
+    .direct-contact {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .contact-method {
+      display: grid;
+      gap: 6px;
+      border: 1px solid rgba(238, 231, 209, 0.12);
+      background: rgba(0, 0, 0, 0.18);
+      border-radius: 18px;
+      padding: 18px;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .contact-method:hover {
+      border-color: rgba(202, 167, 93, 0.42);
+      background: rgba(202, 167, 93, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .contact-method strong {
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .contact-method span {
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    .schedule-note {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .schedule-note a {
+      color: var(--cream);
+      font-weight: 800;
+      text-underline-offset: 4px;
+      text-decoration-color: rgba(202, 167, 93, 0.55);
+    }
+
+    .form-card {
+      padding: 34px;
+      overflow: hidden;
     }
 
     form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
     }
 
     label {
-      text-align: left;
-      font-size: 1.1rem;
-      font-weight: bold;
+      color: var(--cream);
+      font-size: 0.96rem;
+      font-weight: 800;
     }
 
-    input, textarea {
-      padding: 12px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 5px;
+    input,
+    textarea {
       width: 100%;
-      background-color: #3a3a3a;
-      color: #f0f0f0;
+      border: 1px solid rgba(238, 231, 209, 0.15);
+      background: rgba(0, 0, 0, 0.24);
+      color: var(--text);
+      border-radius: 16px;
+      padding: 15px 16px;
+      font: inherit;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(200, 192, 173, 0.68);
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(202, 167, 93, 0.62);
+      box-shadow: 0 0 0 4px rgba(202, 167, 93, 0.12);
+      background: rgba(0, 0, 0, 0.32);
     }
 
     textarea {
+      min-height: 170px;
       resize: vertical;
-      height: 150px;
     }
 
-    button {
-      background-color: #e8e2cc;
-      color: #000;
-      font-weight: bold;
-      padding: 14px;
+    .button-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       border: none;
-      border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      text-decoration: none;
+      font-weight: 850;
+      border-radius: 999px;
+      padding: 16px 24px;
+      transition: 0.2s ease;
+      background: linear-gradient(135deg, var(--cream), var(--cream-dark));
+      color: #15130f;
+      font-size: 1rem;
+      width: fit-content;
     }
 
-    button:hover {
-      background-color: #d8d2bc;
+    .small-print {
+      color: rgba(200, 192, 173, 0.82);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin: 2px 0 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: rgba(0, 0, 0, 0.22);
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-weight: 700;
+    }
+
+    .footer-links a {
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    @media (max-width: 920px) {
+      .nav-wrap {
+        justify-content: center;
+      }
+
+      .brand {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .contact-section {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info {
+        position: static;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav-wrap,
+      .page-intro-inner,
+      .contact-section,
+      .footer-inner {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .nav-links {
+        gap: 14px;
+        font-size: 0.88rem;
+      }
+
+      .brand img {
+        width: 66px;
+        height: 66px;
+      }
+
+      .brand-name strong {
+        font-size: 1.35rem;
+      }
+
+      .page-intro-inner {
+        padding: 58px 0 54px;
+      }
+
+      .contact-section {
+        padding: 58px 0 70px;
+      }
+
+      .contact-info,
+      .form-card {
+        padding: 24px;
+        border-radius: 24px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .button-primary {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <a href="index.html">
-      <img src="logo6.jpg" alt="Pitch Perfect Logo" class="logo">
-    </a>
+  <header class="topbar">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Pitch Perfect home">
+        <img src="logo6.jpg" alt="Pitch Perfect Piano Tuning & Repair Logo" />
+        <span class="brand-name">
+          <strong>Pitch Perfect</strong>
+          <span>Piano Tuning & Repair</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="faq.html">F.A.Q.</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <a class="nav-cta" href="schedule.html">Schedule Today</a>
+    </div>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="schedule.html">Schedule</a>
-    <a href="faq.html">F.A.Q.</a>
-    <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
-  </nav>
+  <main>
+    <section class="page-intro">
+      <div class="page-intro-inner">
+        <div class="eyebrow">Contact</div>
+        <h1>Other <span class="gold-text">Inquiries</span></h1>
+        <p>
+          Have a question that is not about scheduling? Send a message here and I’ll get back with you as soon as I can.
+        </p>
+      </div>
+    </section>
 
-  <div class="contact-container">
-    <h1>Other Inquiries</h1>
-    <p><strong>Note:</strong> This form is for general inquiries only. For scheduling, please <a href="schedule.html">click here to schedule an appointment.</a></p>
+    <section class="contact-section">
+      <aside class="contact-info">
+        <div class="section-kicker">Get in Touch</div>
+        <h2>Questions, concerns, or piano details?</h2>
+        <p>
+          This form is for general inquiries only. For scheduling, please use the scheduling page so your appointment details are handled correctly.
+        </p>
 
-    <form action="https://usebasin.com/f/85f6d20b0731" method="POST">
-      <input type="hidden" name="form_source" value="Contact Page">
+        <div class="direct-contact">
+          <a class="contact-method" href="tel:2259781470">
+            <strong>Call or Text</strong>
+            <span>(225) 978-1470</span>
+          </a>
 
-      <label for="name">Name (required)</label>
-      <input type="text" id="name" name="name" required>
+          <a class="contact-method" href="mailto:pitchperfecttuner@gmail.com">
+            <strong>Email</strong>
+            <span>pitchperfecttuner@gmail.com</span>
+          </a>
+        </div>
 
-      <label for="email">Email (required)</label>
-      <input type="email" id="email" name="email" required>
+        <div class="schedule-note">
+          Need to book a tuning or service appointment? <a href="schedule.html">Click here to schedule an appointment.</a>
+        </div>
+      </aside>
 
-      <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone">
+      <section class="form-card">
+        <div class="section-kicker">Send a Message</div>
+        <h2>Tell me what’s going on.</h2>
+        <p class="form-intro">
+          Share your question, piano issue, or anything else you want me to know. Include the piano brand/model if you have it.
+        </p>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+        <form action="https://usebasin.com/f/85f6d20b0731" method="POST">
+          <input type="hidden" name="form_source" value="Contact Page" />
 
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name (required)</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email (required)</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" />
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="How can I help?" required></textarea>
+          </div>
+
+          <button type="submit" class="button-primary">Send Message</button>
+          <p class="small-print">For appointment requests, use the schedule page instead of this form.</p>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>&copy; 2026 Pitch Perfect Piano Tuning & Repair. Coded and created by Eli Horton.</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="faq.html">F.A.Q.</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
