@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Tuning Questions | Pitch Perfect Piano Tuning & Repair</title>
 
   <style>
@@ -24,13 +25,18 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(202, 167, 93, 0.14), transparent 30rem),
+        radial-gradient(
+          circle at top left,
+          rgba(202, 167, 93, 0.14),
+          transparent 30rem
+        ),
         var(--bg);
       color: var(--cream);
       padding: 40px 20px;
     }
 
     .container {
+      width: 100%;
       max-width: 820px;
       margin: 0 auto;
       background: var(--card);
@@ -46,6 +52,10 @@
       color: var(--gold);
       text-decoration: none;
       font-weight: 700;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
     }
 
     h1 {
@@ -74,6 +84,7 @@
 
     .followup-box h2,
     .question h2 {
+      margin-top: 0;
       margin-bottom: 12px;
     }
 
@@ -172,85 +183,142 @@
 
 <body>
   <div class="container">
-    <a class="back-link" href="schedule.html">← Back to services</a>
+
+    <a class="back-link" href="schedule.html">
+      ← Back to services
+    </a>
 
     <h1>A couple quick tuning questions</h1>
+
     <p>
-      These questions help me schedule the right amount of time needed for your piano. The price will show up on each booking site.
+      These questions help me schedule the right amount of time needed
+      for your piano. The price will show up on each booking site.
     </p>
 
     <form id="tuningForm">
+
       <div class="followup-box">
+
         <h2>Is this a follow-up tuning after a pitch raise?</h2>
+
         <p class="help-text">
-          Choose “yes” only if your piano recently had a pitch raise and you are booking the recommended second tuning.
+          Choose “yes” only if your piano recently had a pitch raise
+          and you are booking the recommended second tuning.
         </p>
 
         <label>
-          <input type="radio" name="followup" value="yes" />
+          <input
+            type="radio"
+            name="followup"
+            value="yes"
+          />
           Yes, this is my follow-up tuning after a pitch raise.
         </label>
 
         <label>
-          <input type="radio" name="followup" value="no" />
+          <input
+            type="radio"
+            name="followup"
+            value="no"
+          />
           No, this is a regular tuning appointment.
         </label>
+
       </div>
 
       <div class="notice" id="followupNotice">
-        Since this is a follow-up tuning, you do not need to answer the rest of the questions. Continue below to book your follow-up tuning.
+        Since this is a follow-up tuning, you do not need to answer
+        the rest of the questions. Continue below to book your
+        follow-up tuning.
       </div>
 
       <div class="normal-questions" id="normalQuestions">
+
         <div class="question">
+
           <h2>Do you know the last time your piano was tuned?</h2>
 
           <label>
-            <input type="radio" name="lastTuned" value="0-1" />
+            <input
+              type="radio"
+              name="lastTuned"
+              value="0-1"
+            />
             0-1 years
           </label>
 
           <label>
-            <input type="radio" name="lastTuned" value="1-3" />
+            <input
+              type="radio"
+              name="lastTuned"
+              value="1-3"
+            />
             1-3 years
           </label>
 
           <label>
-            <input type="radio" name="lastTuned" value="3-10" />
+            <input
+              type="radio"
+              name="lastTuned"
+              value="3-10"
+            />
             3-10 years
           </label>
 
           <label>
-            <input type="radio" name="lastTuned" value="10+" />
+            <input
+              type="radio"
+              name="lastTuned"
+              value="10+"
+            />
             10 years+
           </label>
 
           <label>
-            <input type="radio" name="lastTuned" value="unknown" />
+            <input
+              type="radio"
+              name="lastTuned"
+              value="unknown"
+            />
             Unknown
           </label>
+
         </div>
 
         <div class="question">
+
           <h2>Has your piano been moved in the past 60 days?</h2>
 
           <label>
-            <input type="radio" name="moved" value="yes" />
+            <input
+              type="radio"
+              name="moved"
+              value="yes"
+            />
             Yes, it has been moved in the past 60 days
           </label>
 
           <label>
-            <input type="radio" name="moved" value="no" />
+            <input
+              type="radio"
+              name="moved"
+              value="no"
+            />
             No, it has not been moved in the past 60 days
           </label>
+
         </div>
+
       </div>
 
-      <button type="submit" id="submitButton">Continue to Booking</button>
+      <button type="submit" id="submitButton">
+        Continue to Booking
+      </button>
 
       <div class="error" id="errorMessage">
         Please answer the required questions before continuing.
       </div>
+
     </form>
   </div>
 
@@ -261,63 +329,124 @@
     const submitButton = document.getElementById("submitButton");
     const errorMessage = document.getElementById("errorMessage");
 
-    const standardTuningLink = "https://tidycal.com/pitchperfecttuner/standard-tuning";
-    const pitchRaiseLink = "https://tidycal.com/pitchperfecttuner/pitch-raise";
-    const followupTuningLink = "https://tidycal.com/pitchperfecttuner/finetuning";
+    const standardTuningLink =
+      "https://tidycal.com/pitchperfecttuner/standard-tuning";
 
-    document.querySelectorAll('input[name="followup"]').forEach((option) => {
-      option.addEventListener("change", () => {
-        errorMessage.style.display = "none";
+    const pitchRaiseLink =
+      "https://tidycal.com/pitchperfecttuner/pitch-raise";
 
-        if (option.value === "yes") {
-          normalQuestions.classList.add("disabled");
-          followupNotice.style.display = "block";
-          submitButton.textContent = "Continue to Follow-Up Tuning Booking";
+    const movedPianoLink =
+      "https://tidycal.com/pitchperfecttuner/pitch-raise-pm";
 
-          document.querySelectorAll('input[name="lastTuned"], input[name="moved"]').forEach((input) => {
-            input.checked = false;
-          });
-        } else {
-          normalQuestions.classList.remove("disabled");
-          followupNotice.style.display = "none";
-          submitButton.textContent = "Continue to Booking";
-        }
+    const followupTuningLink =
+      "https://tidycal.com/pitchperfecttuner/finetuning";
+
+    document
+      .querySelectorAll('input[name="followup"]')
+      .forEach((option) => {
+
+        option.addEventListener("change", () => {
+
+          errorMessage.style.display = "none";
+
+          if (option.value === "yes") {
+
+            normalQuestions.classList.add("disabled");
+            followupNotice.style.display = "block";
+
+            submitButton.textContent =
+              "Continue to Follow-Up Tuning Booking";
+
+            document
+              .querySelectorAll(
+                'input[name="lastTuned"], input[name="moved"]'
+              )
+              .forEach((input) => {
+                input.checked = false;
+              });
+
+          } else {
+
+            normalQuestions.classList.remove("disabled");
+            followupNotice.style.display = "none";
+
+            submitButton.textContent =
+              "Continue to Booking";
+          }
+        });
       });
-    });
 
     form.addEventListener("submit", function(event) {
+
       event.preventDefault();
 
-      const followup = document.querySelector('input[name="followup"]:checked');
-      const lastTuned = document.querySelector('input[name="lastTuned"]:checked');
-      const moved = document.querySelector('input[name="moved"]:checked');
+      const followup =
+        document.querySelector(
+          'input[name="followup"]:checked'
+        );
+
+      const lastTuned =
+        document.querySelector(
+          'input[name="lastTuned"]:checked'
+        );
+
+      const moved =
+        document.querySelector(
+          'input[name="moved"]:checked'
+        );
 
       errorMessage.style.display = "none";
 
       if (!followup) {
-        errorMessage.textContent = "Please choose whether this is a follow-up tuning.";
+
+        errorMessage.textContent =
+          "Please choose whether this is a follow-up tuning.";
+
         errorMessage.style.display = "block";
         return;
       }
 
       if (followup.value === "yes") {
+
         window.location.href = followupTuningLink;
         return;
       }
 
       if (!lastTuned || !moved) {
-        errorMessage.textContent = "Please answer both tuning questions before continuing.";
+
+        errorMessage.textContent =
+          "Please answer both tuning questions before continuing.";
+
         errorMessage.style.display = "block";
         return;
       }
 
-      const goesToStandard =
-        (lastTuned.value === "0-1" && moved.value === "no") ||
-        (lastTuned.value === "1-3" && moved.value === "no");
+      /*
+        Any piano moved in the past 60 days
+        goes to the special moved-piano booking page.
+      */
 
-      if (goesToStandard) {
+      if (moved.value === "yes") {
+
+        window.location.href = movedPianoLink;
+        return;
+      }
+
+      /*
+        If the piano was not recently moved,
+        choose the booking page based on
+        how long ago it was last tuned.
+      */
+
+      if (
+        lastTuned.value === "0-1" ||
+        lastTuned.value === "1-3"
+      ) {
+
         window.location.href = standardTuningLink;
+
       } else {
+
         window.location.href = pitchRaiseLink;
       }
     });
