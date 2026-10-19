@@ -32,6 +32,9 @@
     .detail h3 {font-family:'Playfair Display',serif;font-weight:400;font-size:1.5rem;margin:0 0 10px;}
     .detail p {margin:0;font-size:.95rem;}
     .note {font-size:.82rem;font-style:italic;}
+    .registry-links {display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:24px;}
+    .address {font-style:normal;line-height:1.8;color:var(--muted);}
+    .detail .button {margin-top:17px;padding:12px 22px;font-size:.8rem;}
     .rsvp-form {max-width:540px;margin:30px auto 0;text-align:left;background:#ffffffb8;border:1px solid #e6e1d6;border-radius:22px;padding:clamp(20px,5vw,36px);box-shadow:0 12px 35px #574a3a0c;}
     .field {margin-bottom:22px;}
     .field label {display:block;font-weight:600;font-size:.92rem;margin-bottom:9px;}
@@ -67,8 +70,8 @@
       <h2>Our Wedding Day</h2>
       <p>We can't wait to celebrate this special day with the people we love most.</p>
       <div class="details">
-        <div class="detail"><h3>Ceremony</h3><p>Time and location coming soon</p></div>
-        <div class="detail"><h3>Reception</h3><p>Details coming soon</p></div>
+        <div class="detail"><h3>Wedding Location</h3><address class="address">Milldale Baptist Church<br>11950 Milldale Rd<br>Zachary, LA 70791</address><a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=11950%20Milldale%20Rd%2C%20Zachary%2C%20LA%2070791" target="_blank" rel="noopener noreferrer">Get Directions</a></div>
+        <div class="detail"><h3>Wedding Day</h3><p>Friday, December 4, 2026</p><p>Ceremony begins at 6:30 PM. Reception details coming soon.</p></div>
       </div>
     </section>
 
@@ -107,7 +110,11 @@
     <section class="section" id="registry">
       <div class="eyebrow">With love and gratitude</div>
       <h2>Registry</h2>
-      <p>Your presence is the greatest gift. Registry information will be added here soon.</p>
+      <p>Your presence is the greatest gift! If you would like to celebrate with a gift, you can find our registries below.</p>
+      <div class="registry-links">
+        <a class="button" href="https://giftful.com/wishlists/zEo6qkR5h7QLpCWJKDsr" target="_blank" rel="noopener noreferrer">Groom Registry</a>
+        <a class="button" href="https://giftful.com/wishlists/ITeM3TnGSLxWoyBMMuRE" target="_blank" rel="noopener noreferrer">Bridal Registry</a>
+      </div>
     </section>
     <footer>With love, Eli &amp; Georgia</footer>
   </main>
