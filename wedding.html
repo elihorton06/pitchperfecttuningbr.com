@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="referrer" content="no-referrer">
-  <title>Elijah & Georgia | Our Wedding</title>
+  <title>Eli & Georgia | Our Wedding</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
@@ -32,6 +32,18 @@
     .detail h3 {font-family:'Playfair Display',serif;font-weight:400;font-size:1.5rem;margin:0 0 10px;}
     .detail p {margin:0;font-size:.95rem;}
     .note {font-size:.82rem;font-style:italic;}
+    .rsvp-form {max-width:540px;margin:30px auto 0;text-align:left;background:#ffffffb8;border:1px solid #e6e1d6;border-radius:22px;padding:clamp(20px,5vw,36px);box-shadow:0 12px 35px #574a3a0c;}
+    .field {margin-bottom:22px;}
+    .field label {display:block;font-weight:600;font-size:.92rem;margin-bottom:9px;}
+    .field input,.field select,.field textarea {width:100%;padding:14px 15px;border:1px solid #cfcfc3;border-radius:11px;background:#fffdf9;color:var(--ink);font:inherit;font-size:1rem;}
+    .field input:focus,.field select:focus,.field textarea:focus {outline:2px solid var(--sage);outline-offset:2px;}
+    .field textarea {resize:vertical;min-height:110px;}
+    .guest-list {display:grid;gap:4px;}
+    .form-button {border:0;cursor:pointer;width:100%;}
+    .result {margin-top:20px;padding:17px;border-radius:12px;background:#eef0e9;color:var(--ink);line-height:1.65;}
+    .result[hidden] {display:none;}
+    .form-disclaimer {font-size:.78rem;line-height:1.6;text-align:center;margin-top:15px;}
+
     footer {text-align:center;font-family:'Great Vibes',cursive;font-size:2rem;color:#7a8975;padding-top:32px;}
     @media(max-width:600px) {.hero{min-height:auto;padding:60px 0 65px}.details{grid-template-columns:1fr}.section{padding:55px 4px}.shell{padding-inline:16px}}
   </style>
@@ -40,13 +52,13 @@
   <main class="shell">
     <section class="hero" aria-label="Wedding welcome">
       <div class="eyebrow">Together with our families</div>
-      <h1>Elijah &amp; Georgia</h1>
+      <h1>Eli &amp; Georgia</h1>
       <div class="photo-frame">
         <!-- Upload a real image named elig.jpg alongside wedding.html, then change src to elig.jpg. -->
-        <img src="elig.jpg" alt="Elijah and Georgia together" onerror="this.style.display='none';this.parentElement.setAttribute('aria-label','Our favorite photo will be here soon')">
+        <img src="elig.jpg" alt="Eli and Georgia together" onerror="this.style.display='none';this.parentElement.setAttribute('aria-label','Our favorite photo will be here soon')">
       </div>
       <div class="eyebrow">Joyfully invite you to celebrate</div>
-      <div class="date">January 23, 2027</div>
+      <div class="date">December 4, 2026</div>
       <a class="button" href="#rsvp">RSVP to Our Wedding</a>
     </section>
 
@@ -63,8 +75,33 @@
     <section class="section" id="rsvp">
       <div class="eyebrow">The favor of a reply</div>
       <h2>Kindly RSVP</h2>
-      <p>We are so excited to celebrate with you! Online RSVPs will open here soon.</p>
-      <p class="note">RSVP form coming soon. No information is being collected yet.</p>
+      <p>Tell us who will be joining us on our special day.</p>
+      <form class="rsvp-form" id="rsvpForm">
+        <div class="field">
+          <label for="guestCount">How many people are RSVPing?</label>
+          <select id="guestCount" name="guestCount" required>
+            <option value="" selected disabled>Select number of people</option>
+            <option value="1">1 person</option>
+            <option value="2">2 people</option>
+            <option value="3">3 people</option>
+            <option value="4">4 people</option>
+            <option value="5">5 people</option>
+            <option value="6">6 people</option>
+            <option value="7">7 people</option>
+            <option value="8">8 people</option>
+            <option value="9">9 people</option>
+            <option value="10">10 people</option>
+          </select>
+        </div>
+        <div class="guest-list" id="guestNames" aria-live="polite"></div>
+        <div class="field">
+          <label for="notes">Any notes for us? (Optional)</label>
+          <textarea id="notes" name="notes" placeholder="Anything you'd like us to know..."></textarea>
+        </div>
+        <button class="button form-button" type="submit">Review Our RSVP</button>
+        <div class="result" id="rsvpResult" role="status" hidden></div>
+        <p class="form-disclaimer">Preview only: your RSVP is not sent or saved yet. We'll connect submissions next.</p>
+      </form>
     </section>
 
     <section class="section" id="registry">
@@ -72,7 +109,52 @@
       <h2>Registry</h2>
       <p>Your presence is the greatest gift. Registry information will be added here soon.</p>
     </section>
-    <footer>With love, Elijah &amp; Georgia</footer>
+    <footer>With love, Eli &amp; Georgia</footer>
   </main>
+  <script>
+    const guestCount = document.getElementById('guestCount');
+    const guestNames = document.getElementById('guestNames');
+    const rsvpResult = document.getElementById('rsvpResult');
+
+    guestCount.addEventListener('change', () => {
+      const previous = [...guestNames.querySelectorAll('input')].map(input => input.value);
+      guestNames.replaceChildren();
+      rsvpResult.hidden = true;
+      const count = Number(guestCount.value);
+      for (let i = 0; i < count; i++) {
+        const field = document.createElement('div');
+        field.className = 'field';
+        const label = document.createElement('label');
+        label.htmlFor = `guest-${i + 1}`;
+        label.textContent = `Guest ${i + 1} full name`;
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.id = `guest-${i + 1}`;
+        input.name = `guest${i + 1}`;
+        input.placeholder = 'First and last name';
+        input.autocomplete = 'off';
+        input.required = true;
+        input.maxLength = 120;
+        input.value = previous[i] || '';
+        field.append(label, input);
+        guestNames.append(field);
+      }
+    });
+
+    document.getElementById('rsvpForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const names = [...guestNames.querySelectorAll('input')].map(input => input.value.trim());
+      if (!names.length || names.some(name => !name)) return;
+      rsvpResult.replaceChildren();
+      const heading = document.createElement('strong');
+      heading.textContent = 'RSVP preview (not submitted)';
+      const summary = document.createElement('div');
+      summary.textContent = names.join(', ');
+      const note = document.createElement('div');
+      note.textContent = 'Your response has not been saved yet.';
+      rsvpResult.append(heading, summary, note);
+      rsvpResult.hidden = false;
+    });
+  </script>
 </body>
 </html>
