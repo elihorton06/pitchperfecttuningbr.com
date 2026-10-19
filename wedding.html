@@ -101,9 +101,9 @@
           <label for="notes">Any notes for us? (Optional)</label>
           <textarea id="notes" name="notes" placeholder="Anything you'd like us to know..."></textarea>
         </div>
-        <button class="button form-button" type="submit">Review Our RSVP</button>
+        <button class="button form-button" type="submit">Send Our RSVP</button>
         <div class="result" id="rsvpResult" role="status" hidden></div>
-        <p class="form-disclaimer">Preview only: your RSVP is not sent or saved yet. We'll connect submissions next.</p>
+        <p class="form-disclaimer">Please submit once. If you are unsure whether it went through, contact Eli or Georgia before trying again.</p>
       </form>
     </section>
 
@@ -119,6 +119,7 @@
     <footer>With love, Eli &amp; Georgia</footer>
   </main>
   <script>
+    const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyQsJaAMX2RykeDuWv_iqOjkwyNReUgxYTpjsKq0c94M7Ob_TqREyYV9QEsfZklGvFCTg/exec';
     const guestCount = document.getElementById('guestCount');
     const guestNames = document.getElementById('guestNames');
     const rsvpResult = document.getElementById('rsvpResult');
@@ -148,19 +149,34 @@
       }
     });
 
-    document.getElementById('rsvpForm').addEventListener('submit', event => {
+    const form = document.getElementById('rsvpForm');
+    const sendButton = form.querySelector('button[type="submit"]');
+    form.addEventListener('submit', async event => {
       event.preventDefault();
       const names = [...guestNames.querySelectorAll('input')].map(input => input.value.trim());
       if (!names.length || names.some(name => !name)) return;
-      rsvpResult.replaceChildren();
-      const heading = document.createElement('strong');
-      heading.textContent = 'RSVP preview (not submitted)';
-      const summary = document.createElement('div');
-      summary.textContent = names.join(', ');
-      const note = document.createElement('div');
-      note.textContent = 'Your response has not been saved yet.';
-      rsvpResult.append(heading, summary, note);
-      rsvpResult.hidden = false;
+      sendButton.disabled = true;
+      sendButton.textContent = 'Sending...';
+      rsvpResult.hidden = true;
+      try {
+        // Apps Script cannot expose a readable cross-origin response in this setup.
+        // A successful fetch only confirms that the browser sent the request.
+        await fetch(RSVP_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({ names, notes: document.getElementById('notes').value })
+        });
+        rsvpResult.textContent = 'Thank you! Your RSVP was sent. We look forward to celebrating with you!';
+        rsvpResult.hidden = false;
+        sendButton.textContent = 'RSVP Sent';
+        // Do not clear the fields, so the guest can contact us with the details if needed.
+      } catch (error) {
+        rsvpResult.textContent = 'We could not send your RSVP. Please check your connection and try again.';
+        rsvpResult.hidden = false;
+        sendButton.disabled = false;
+        sendButton.textContent = 'Try Sending Again';
+      }
     });
   </script>
 </body>
