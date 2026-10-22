@@ -10,44 +10,44 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root { --ink:#50463c; --muted:#867c70; --sage:#889783; --cream:#faf7f0; }
+    :root { --ink:#365d80; --muted:#789fc3; --sage:#8bb9df; --cream:#fafcff; }
     * {box-sizing:border-box}
     html {scroll-behavior:smooth}
     body {margin:0;color:var(--ink);font-family:'DM Sans',sans-serif;background:var(--cream);}
-    body::before {content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 12% 18%,#e9e8db 0,transparent 40%),radial-gradient(ellipse at 90% 80%,#f2e4db 0,transparent 42%);}
+    body::before {content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 12% 18%,#e5f3ff 0,transparent 40%),radial-gradient(ellipse at 90% 80%,#d9eafa 0,transparent 42%);}
     .shell {max-width:960px;margin:0 auto;padding:28px 20px 80px;}
     .eyebrow {font-size:.73rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);font-weight:600;}
     .hero {min-height:86vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:15px;}
-    h1 {font-family:'Great Vibes',cursive;font-size:clamp(4.6rem,12vw,8.5rem);font-weight:400;line-height:1.1;margin:0;color:#6b7565;}
+    h1 {font-family:'Great Vibes',cursive;font-size:clamp(4.6rem,12vw,8.5rem);font-weight:400;line-height:1.1;margin:0;color:#6a9ac7;}
     .date {font-family:'Playfair Display',serif;font-size:1.18rem;letter-spacing:.12em;}
-    .photo-frame {width:min(380px,80vw);aspect-ratio:4/5;margin:12px auto 10px;padding:10px;border:1px solid #c9c7b9;border-radius:220px 220px 10px 10px;background:#fffaf4;box-shadow:0 18px 50px #574a3a19;overflow:hidden;}
+    .photo-frame {width:min(380px,80vw);aspect-ratio:4/5;margin:12px auto 10px;padding:10px;border:1px solid #bed9ed;border-radius:220px 220px 10px 10px;background:#ffffff;box-shadow:0 18px 50px #477ba519;overflow:hidden;}
     .photo-frame img {display:block;width:100%;height:100%;object-fit:cover;border-radius:210px 210px 4px 4px;}
-    .button {display:inline-block;background:#6d7d6a;color:white;text-decoration:none;padding:15px 32px;border-radius:100px;letter-spacing:.08em;font-size:.85rem;font-weight:600;transition:background .2s,transform .2s;}
-    .button:hover {background:#536650;transform:translateY(-2px)}
-    .section {padding:70px 16px;text-align:center;border-top:1px solid #ddd8ca;}
+    .button {display:inline-block;background:#6e9dca;color:white;text-decoration:none;padding:15px 32px;border-radius:100px;letter-spacing:.08em;font-size:.85rem;font-weight:600;transition:background .2s,transform .2s;}
+    .button:hover {background:#467cae;transform:translateY(-2px)}
+    .section {padding:70px 16px;text-align:center;border-top:1px solid #d7e6f3;}
     h2 {font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(2rem,5vw,3rem);margin:12px 0 18px;}
     p {line-height:1.8;color:var(--muted);max-width:550px;margin:0 auto 24px;}
     .details {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:35px auto;max-width:700px;}
-    .detail {background:#ffffffa6;border:1px solid #e6e1d6;border-radius:16px;padding:28px 16px;}
+    .detail {background:#ffffffd9;border:1px solid #d5e7f5;border-radius:16px;padding:28px 16px;}
     .detail h3 {font-family:'Playfair Display',serif;font-weight:400;font-size:1.5rem;margin:0 0 10px;}
     .detail p {margin:0;font-size:.95rem;}
     .note {font-size:.82rem;font-style:italic;}
     .registry-links {display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:24px;}
     .address {font-style:normal;line-height:1.8;color:var(--muted);}
     .detail .button {margin-top:17px;padding:12px 22px;font-size:.8rem;}
-    .rsvp-form {max-width:540px;margin:30px auto 0;text-align:left;background:#ffffffb8;border:1px solid #e6e1d6;border-radius:22px;padding:clamp(20px,5vw,36px);box-shadow:0 12px 35px #574a3a0c;}
+    .rsvp-form {max-width:540px;margin:30px auto 0;text-align:left;background:#fffffff0;border:1px solid #d5e7f5;border-radius:22px;padding:clamp(20px,5vw,36px);box-shadow:0 12px 35px #477ba50c;}
     .field {margin-bottom:22px;}
     .field label {display:block;font-weight:600;font-size:.92rem;margin-bottom:9px;}
-    .field input,.field select,.field textarea {width:100%;padding:14px 15px;border:1px solid #cfcfc3;border-radius:11px;background:#fffdf9;color:var(--ink);font:inherit;font-size:1rem;}
+    .field input,.field select,.field textarea {width:100%;padding:14px 15px;border:1px solid #bfd6e8;border-radius:11px;background:#ffffff;color:var(--ink);font:inherit;font-size:1rem;}
     .field input:focus,.field select:focus,.field textarea:focus {outline:2px solid var(--sage);outline-offset:2px;}
     .field textarea {resize:vertical;min-height:110px;}
     .guest-list {display:grid;gap:4px;}
     .form-button {border:0;cursor:pointer;width:100%;}
-    .result {margin-top:20px;padding:17px;border-radius:12px;background:#eef0e9;color:var(--ink);line-height:1.65;}
+    .result {margin-top:20px;padding:17px;border-radius:12px;background:#eaf5ff;color:var(--ink);line-height:1.65;}
     .result[hidden] {display:none;}
     .form-disclaimer {font-size:.78rem;line-height:1.6;text-align:center;margin-top:15px;}
 
-    footer {text-align:center;font-family:'Great Vibes',cursive;font-size:2rem;color:#7a8975;padding-top:32px;}
+    footer {text-align:center;font-family:'Great Vibes',cursive;font-size:2rem;color:#83b4de;padding-top:32px;}
     @media(max-width:600px) {.hero{min-height:auto;padding:60px 0 65px}.details{grid-template-columns:1fr}.section{padding:55px 4px}.shell{padding-inline:16px}}
   </style>
 </head>
@@ -71,7 +71,7 @@
       <p>We can't wait to celebrate this special day with the people we love most.</p>
       <div class="details">
         <div class="detail"><h3>Wedding Location</h3><address class="address">Milldale Baptist Church<br>11950 Milldale Rd<br>Zachary, LA 70791</address><a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=11950%20Milldale%20Rd%2C%20Zachary%2C%20LA%2070791" target="_blank" rel="noopener noreferrer">Get Directions</a></div>
-        <div class="detail"><h3>Wedding Day</h3><p>Friday, December 4, 2026</p><p>Ceremony begins at 6:30 PM. Reception details coming soon.</p></div>
+        <div class="detail"><h3>Wedding Day</h3><p>Friday, December 4, 2026</p><p>Ceremony begins at 6:30 PM. Reception to follow at the church.</p></div>
       </div>
     </section>
 
