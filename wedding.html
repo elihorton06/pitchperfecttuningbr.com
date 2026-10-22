@@ -167,10 +167,9 @@
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify({ names, notes: document.getElementById('notes').value })
         });
-        rsvpResult.textContent = 'Thank you! Your RSVP was sent. We look forward to celebrating with you!';
-        rsvpResult.hidden = false;
-        sendButton.textContent = 'RSVP Sent';
-        // Do not clear the fields, so the guest can contact us with the details if needed.
+        // This no-cors request cannot confirm that Google Sheets saved the data.
+        // Redirect only after the browser finishes sending the request.
+        window.location.assign('thankyou.html');
       } catch (error) {
         rsvpResult.textContent = 'We could not send your RSVP. Please check your connection and try again.';
         rsvpResult.hidden = false;
